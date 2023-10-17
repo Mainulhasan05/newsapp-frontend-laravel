@@ -64,7 +64,7 @@
         <div class="row align-items-center bg-white py-3 px-lg-5">
             <div class="col-lg-4">
                 <a href="index.html" class="navbar-brand p-0 d-none d-lg-block">
-                    <h1 class="m-0 display-4 text-uppercase text-primary">Biz<span class="text-secondary font-weight-normal">News</span></h1>
+                    <h1 class="m-0 display-4 text-uppercase text-primary">Kawsar<span class="text-secondary font-weight-normal">News</span></h1>
                 </a>
             </div>
             <div class="col-lg-8 text-center text-lg-right">
@@ -79,7 +79,7 @@
     <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-2 py-lg-0 px-lg-5">
             <a href="index.html" class="navbar-brand d-block d-lg-none">
-                <h1 class="m-0 display-4 text-uppercase text-primary">Biz<span class="text-white font-weight-normal">News</span></h1>
+                <h1 class="m-0 display-4 text-uppercase text-primary">Kawsar<span class="text-white font-weight-normal">News</span></h1>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -206,10 +206,10 @@
         </div>
     </div>
     <div class="container-fluid py-4 px-sm-3 px-md-5" style="background: #111111;">
-        <p class="m-0 text-center">&copy; <a href="#">Your Site Name</a>. All Rights Reserved. 
+        <p class="m-0 text-center">&copy; <a href="#">Kawsar News</a>. All Rights Reserved. 
 		
 		<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-		Design by <a href="https://htmlcodex.com">HTML Codex</a></p>
+		
     </div>
     <!-- Footer End -->
 
