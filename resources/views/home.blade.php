@@ -2,7 +2,7 @@
 @extends('layouts.master')
 
     {{-- page title --}}
-    @section('title', 'News24')
+    @section('title', 'Kawsar News Portal')
     {{-- page content --}}
     @section('content')
     
