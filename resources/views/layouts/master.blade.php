@@ -28,7 +28,7 @@
                             <a class="nav-link text-body small" href="#">Advertise</a>
                         </li>
                         <li class="nav-item border-right border-secondary">
-                            <a class="nav-link text-body small" href="#">Contact</a>
+                            <a class="nav-link text-body small" href="{{url('/contact')}}">Contact</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-body small" href="#">Login</a>
@@ -63,7 +63,7 @@
         </div>
         <div class="row align-items-center bg-white py-3 px-lg-5">
             <div class="col-lg-4">
-                <a href="index.html" class="navbar-brand p-0 d-none d-lg-block">
+                <a href="{{url('/')}}" class="navbar-brand p-0 d-none d-lg-block">
                     <h1 class="m-0 display-4 text-uppercase text-primary">Kawsar<span class="text-secondary font-weight-normal">News</span></h1>
                 </a>
             </div>
@@ -86,7 +86,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav mr-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="{{url('/')}}" class="nav-item nav-link active">Home</a>
                     <a href="category.html" class="nav-item nav-link">Category</a>
                     <a href="single.html" class="nav-item nav-link">Single News</a>
                     <div class="nav-item dropdown">
@@ -97,7 +97,7 @@
                             <a href="#" class="dropdown-item">Menu item 3</a>
                         </div>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="{{url('/contact')}}" class="nav-item nav-link">Contact</a>
                 </div>
                 <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
                     <input type="text" class="form-control border-0" placeholder="Keyword">
