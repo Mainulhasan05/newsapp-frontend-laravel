@@ -35,7 +35,7 @@
                         </div>
                     </div>
                     <h6 class="text-uppercase font-weight-bold mb-3">Contact Us</h6>
-                    <form method='POST' action="{{route('contact')}}">
+                    <form method='POST' action="{{route('contactpost')}}">
                         @csrf
                         <div class="form-row">
                             <div class="col-md-6">

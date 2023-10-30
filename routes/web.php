@@ -16,7 +16,7 @@ Route::get('/', function () {
 // });
 
 Route::get('/contact',[ContactUsController::class,'index'])->name('contact');
-Route::post('/contact',[ContactUsController::class,'store'])->name('contact');
+Route::post('/contact',[ContactUsController::class,'store'])->name('contactpost');
 
 Route::get('/login',function(){
     return view('login');
