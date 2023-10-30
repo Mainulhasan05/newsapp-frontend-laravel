@@ -1,25 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Categories;
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\ContactUsController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 Route::get('/', function () {
     return view('home');
+    // return Categories::query()->where('id',1)->select('name')->first();
 });
+// Route::get('/', function () {
+//     return Categories->all();
+//     // return view('home');
+// });
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/contact',[ContactUsController::class,'index'])->name('contact');
+Route::post('/contact',[ContactUsController::class,'store'])->name('contact');
 
 Route::get('/login',function(){
     return view('login');
