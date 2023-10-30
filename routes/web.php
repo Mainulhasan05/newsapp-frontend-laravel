@@ -18,6 +18,9 @@ Route::get('/', function () {
 Route::get('/contact',[ContactUsController::class,'index'])->name('contact');
 Route::post('/contact',[ContactUsController::class,'store'])->name('contactpost');
 
+Route::get('/get',function (){
+    return Categories::all();
+});
 Route::get('/login',function(){
     return view('login');
 })->name('login');
