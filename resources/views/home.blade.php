@@ -207,16 +207,22 @@
                                 <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
                             </div>
                         </div>
+                        {{-- show all latest nes --}}
+                        @foreach ($latest_news as $news)
+                            
+                        
                         <div class="col-lg-6">
                             <div class="position-relative mb-3">
-                                <img class="img-fluid w-100" src="img/news-700x435-1.jpg" style="object-fit: cover;">
+                                {{-- <img class="img-fluid w-100" src="{{env('BACKEND_URL').$news->image}}" style="object-fit: cover;"> --}}
+                                <img class="img-fluid w-100" src="{{env("BACKEND_URL")}}/storage/{{$news->image}}" style="object-fit: cover;">
+                                
                                 <div class="bg-white border border-top-0 p-4">
                                     <div class="mb-2">
                                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
                                             href="">Business</a>
                                         <a class="text-body" href=""><small>Jan 01, 2045</small></a>
                                     </div>
-                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">{{$news->title}}</a>
                                     <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
                                         rebum clita rebum dolor stet amet justo</p>
                                 </div>
@@ -232,6 +238,8 @@
                                 </div>
                             </div>
                         </div>
+                        @endforeach
+                        {{-- end show all latest nes --}}
                         <div class="col-lg-6">
                             <div class="position-relative mb-3">
                                 <img class="img-fluid w-100" src="img/news-700x435-2.jpg" style="object-fit: cover;">

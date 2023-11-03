@@ -10,6 +10,9 @@ Route::get('/get',function (){
     return Categories::all();
 });
 Route::get('/',[HomeController::class,'index'])->name('home');
+// Route::get('/',function(){
+//     return App\Models\News::all();
+// })->name('home');
 
 
 Route::get('/contact',[ContactUsController::class,'index'])->name('contact');
