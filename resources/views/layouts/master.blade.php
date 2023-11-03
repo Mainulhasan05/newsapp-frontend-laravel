@@ -98,6 +98,10 @@
                         </div>
                     </div>
                     <a href="{{url('/contact')}}" class="nav-item nav-link">Contact</a>
+                    
+                    @foreach ($categories as $category)
+                    <a href="{{url('/'.$category->slug)}}" class="nav-item nav-link">{{$category->name}}</a>
+                @endforeach
                 </div>
                 <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
                     <input type="text" class="form-control border-0" placeholder="Keyword">

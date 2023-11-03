@@ -1,6 +1,8 @@
 @extends('layouts.master')
 @section('title', 'Contact')
 @section('content')
+
+
 <div class="container-fluid mt-5 pt-3">
     <div class="container">
         <div class="row">
