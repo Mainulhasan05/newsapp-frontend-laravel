@@ -4,6 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    
+    <meta name="description" content="Kawsar News Portal Description">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="@yield('ogTitle', 'Your News Portal')">
+    <meta property="og:description" content="@yield('ogDescription', 'Latest news and updates')">
+    <meta property="og:url" content="@yield('ogUrl', request()->fullUrl())">
+    <meta property="og:image" content="@yield('ogImage', asset('path/to/default/image.jpg'))">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:title" content="@yield('twitterTitle', 'Your News Portal')">
+    <meta name="twitter:description" content="@yield('twitterDescription', 'Latest news and updates')">
+    <meta name="twitter:url" content="@yield('twitterUrl', request()->fullUrl())">
+    <meta name="twitter:image" content="@yield('twitterImage', asset('path/to/default/image.jpg'))">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="news, updates, articles, Laravel">
+    <meta name="author" content="Your Name">
     <title>@yield('title')</title>
     
     <link href={{asset("img/favicon.ico")}} rel="icon">

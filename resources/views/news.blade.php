@@ -1,8 +1,18 @@
 {{-- extend master layout --}}
 @extends('layouts.master')
+@section('title', $news->title)
 
+@section('ogTitle', $news->title)
+@section('ogDescription', $news->excerpt)
+@section('ogUrl', route('news.show', $news->slug))
+@section('ogImage', asset('https://www.admin.rifatewu2.xyz/storage/images/csHMYQFLwgqKVRnGVG9FhCdD08LIAHBtgGG1WMcF.webp'))
+
+@section('twitterTitle', $news->title)
+@section('twitterDescription', $news->excerpt)
+@section('twitterUrl', route('news.show', $news->slug))
+@section('twitterImage', asset('https://www.admin.rifatewu2.xyz/storage/images/csHMYQFLwgqKVRnGVG9FhCdD08LIAHBtgGG1WMcF.webp'))
     {{-- page title --}}
-    @section('title', 'Kawsar News Portal')
+    
     {{-- page content --}}
     @section('content')
     <body>

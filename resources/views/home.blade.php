@@ -1,6 +1,17 @@
 {{-- extend master layout --}}
 @extends('layouts.master')
+{{-- https://www.admin.rifatewu2.xyz/storage/images/csHMYQFLwgqKVRnGVG9FhCdD08LIAHBtgGG1WMcF.webp --}}
+{{-- @section('title', $article->title)
 
+@section('ogTitle', $article->title)
+@section('ogDescription', $article->excerpt)
+@section('ogUrl', route('news.show', $article->slug)) --}}
+@section('ogImage', asset('https://www.admin.rifatewu2.xyz/storage/images/csHMYQFLwgqKVRnGVG9FhCdD08LIAHBtgGG1WMcF.webp'))
+{{-- 
+@section('twitterTitle', $article->title)
+@section('twitterDescription', $article->excerpt)
+@section('twitterUrl', route('news.show', $article->slug)) --}}
+@section('twitterImage', asset('https://www.admin.rifatewu2.xyz/storage/images/csHMYQFLwgqKVRnGVG9FhCdD08LIAHBtgGG1WMcF.webp'))
     {{-- page title --}}
     @section('title', 'Kawsar News Portal')
     {{-- page content --}}
