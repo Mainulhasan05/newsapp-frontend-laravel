@@ -10,6 +10,9 @@ class NewsController extends Controller
     public function show($slug)
     {
         $news = News::where('slug', $slug)->firstOrFail();
-        return view('news', compact('news'));
+        $news->increment('views');
+        // get trending news
+        $trending_news=News::orderBy('views','desc')->take(5)->get();
+        return view('news', compact('news','trending_news'));
     }
 }
