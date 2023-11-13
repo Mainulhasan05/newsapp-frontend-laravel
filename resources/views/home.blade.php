@@ -138,7 +138,9 @@
                 {{-- show all featured news --}}
                 @foreach ($featured_news as $news)
                 <div class="position-relative overflow-hidden" style="height: 300px;">
-                    <img class="img-fluid h-100" src="{{env("BACKEND_URL")}}/storage/{{$news->image}}" style="object-fit: cover;">
+                    <a href="{{ route('news.show', ['slug' => $news->slug]) }}">
+                        <img class="img-fluid h-100" src="{{env("BACKEND_URL")}}/storage/{{$news->image}}" style="object-fit: cover;">
+                    </a>
                     <div class="overlay">
                         <div class="mb-2">
                             <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
@@ -147,7 +149,7 @@
                             {{ \Carbon\Carbon::parse($news->created_at)->format('M d, Y') }}    
                             </small></a>
                         </div>
-                        <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">
+                        <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="{{ route('news.show', ['slug' => $news->slug]) }}">
                             {{$news->title}}
                         </a>
                     </div>
@@ -155,50 +157,7 @@
                 @endforeach
                 {{-- end show all featured news --}}
 
-                <div class="position-relative overflow-hidden" style="height: 300px;">
-                    <img class="img-fluid h-100" src="img/news-700x435-2.jpg" style="object-fit: cover;">
-                    <div class="overlay">
-                        <div class="mb-2">
-                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                href="">Business</a>
-                            <a class="text-white" href=""><small>Jan 01, 2045</small></a>
-                        </div>
-                        <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit...</a>
-                    </div>
-                </div>
-                <div class="position-relative overflow-hidden" style="height: 300px;">
-                    <img class="img-fluid h-100" src="img/news-700x435-3.jpg" style="object-fit: cover;">
-                    <div class="overlay">
-                        <div class="mb-2">
-                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                href="">Business</a>
-                            <a class="text-white" href=""><small>Jan 01, 2045</small></a>
-                        </div>
-                        <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit...</a>
-                    </div>
-                </div>
-                <div class="position-relative overflow-hidden" style="height: 300px;">
-                    <img class="img-fluid h-100" src="img/news-700x435-4.jpg" style="object-fit: cover;">
-                    <div class="overlay">
-                        <div class="mb-2">
-                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                href="">Business</a>
-                            <a class="text-white" href=""><small>Jan 01, 2045</small></a>
-                        </div>
-                        <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit...</a>
-                    </div>
-                </div>
-                <div class="position-relative overflow-hidden" style="height: 300px;">
-                    <img class="img-fluid h-100" src="img/news-700x435-5.jpg" style="object-fit: cover;">
-                    <div class="overlay">
-                        <div class="mb-2">
-                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                href="">Business</a>
-                            <a class="text-white" href=""><small>Jan 01, 2045</small></a>
-                        </div>
-                        <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit...</a>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -224,7 +183,9 @@
                         <div class="col-lg-6">
                             <div class="position-relative mb-3">
                                 {{-- <img class="img-fluid w-100" src="{{env('BACKEND_URL').$news->image}}" style="object-fit: cover;"> --}}
+                                <a href="{{ route('news.show', ['slug' => $news->slug]) }}">
                                 <img class="img-fluid w-100" src="{{env("BACKEND_URL")}}/storage/{{$news->image}}" style="object-fit: cover;">
+                            </a>
                                 
                                 <div class="bg-white border border-top-0 p-4">
                                     <div class="mb-2">

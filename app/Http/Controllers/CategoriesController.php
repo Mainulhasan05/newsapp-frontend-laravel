@@ -34,9 +34,15 @@ class CategoriesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Categories $categories)
-    {
-        //
+    // show will receive slug as parameter
+    public function show($slug){
+        // get category by slug
+        $category=Categories::where('slug',$slug)->firstOrFail();
+        // get all news of this category
+        $news=$category->news()->orderBy('id','desc')->paginate(10);
+        // get trending news
+        $trending_news=News::orderBy('views','desc')->take(5)->get();
+        return view('category',compact('category','news','trending_news'));
     }
 
     /**

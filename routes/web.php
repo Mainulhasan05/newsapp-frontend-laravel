@@ -17,6 +17,8 @@ Route::get('/contact',[ContactUsController::class,'index'])->name('contact');
 Route::post('/contact',[ContactUsController::class,'store'])->name('contactpost');
 
 Route::get('/news/{slug}', [NewsController::class, 'show'])->name('news.show');
+// create route for categories category/slug
+Route::get('/category/{slug}', [CategoriesController::class, 'show'])->name('category.show');
 
 Route::get('/login',function(){
     return view('login');
