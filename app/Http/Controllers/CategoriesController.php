@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categories;
 use Illuminate\Http\Request;
+use App\Models\News;
 
 class CategoriesController extends Controller
 {
@@ -38,11 +39,15 @@ class CategoriesController extends Controller
     public function show($slug){
         // get category by slug
         $category=Categories::where('slug',$slug)->firstOrFail();
+        $latest_news=News::orderBy('id','desc')->take(5)->get();
+        // get featured news 10
+        $featured_news=News::where('is_featured',1)->orderBy('id','desc')->take(10)->get();
         // get all news of this category
-        $news=$category->news()->orderBy('id','desc')->paginate(10);
+        
         // get trending news
         $trending_news=News::orderBy('views','desc')->take(5)->get();
-        return view('category',compact('category','news','trending_news'));
+        print_r($category);
+        return view('category',compact('category','latest_news','trending_news','featured_news','trending_news'));
     }
 
     /**

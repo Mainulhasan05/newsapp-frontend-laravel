@@ -11,7 +11,7 @@ class NewsController extends Controller
     {
         $news = News::where('slug', $slug)->firstOrFail();
         $news->increment('views');
-        // get trending news
+        
         $trending_news=News::orderBy('views','desc')->take(5)->get();
         return view('news', compact('news','trending_news'));
     }
