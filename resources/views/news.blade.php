@@ -3,15 +3,15 @@
 @section('title', $news->title)
 
 @section('ogTitle', $news->title)
-@section('ogDescription', htmlspecialchars($news->description))
+@section('ogDescription', $news->description)
 
 @section('ogUrl', route('news.show', $news->slug))
-@section('ogImage', asset('{{env("BACKEND_URL")}}/storage/{{$news->image}}'))
+@section('ogImage', '{{env("BACKEND_URL")}}/storage/{{$news->image}}')
 
 @section('twitterTitle', $news->title)
 @section('twitterDescription', $news->excerpt)
 @section('twitterUrl', route('news.show', $news->slug))
-@section('twitterImage', asset('{{env("BACKEND_URL")}}/storage/{{$news->image}}'))
+@section('twitterImage', '{{env("BACKEND_URL")}}/storage/{{$news->image}}')
     {{-- page title --}}
     
     {{-- page content --}}
