@@ -3,7 +3,8 @@
 @section('title', $news->title)
 
 @section('ogTitle', $news->title)
-@section('ogDescription', !!$news->description!!)
+@section('ogDescription', htmlspecialchars($news->description))
+
 @section('ogUrl', route('news.show', $news->slug))
 @section('ogImage', asset('{{env("BACKEND_URL")}}/storage/{{$news->image}}'))
 
