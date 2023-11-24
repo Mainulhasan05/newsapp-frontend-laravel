@@ -3,14 +3,14 @@
 @section('title', $news->title)
 
 @section('ogTitle', $news->title)
-@section('ogDescription', $news->excerpt)
+@section('ogDescription', !!$news->description!!)
 @section('ogUrl', route('news.show', $news->slug))
-@section('ogImage', asset('https://www.admin.rifatewu2.xyz/storage/images/csHMYQFLwgqKVRnGVG9FhCdD08LIAHBtgGG1WMcF.webp'))
+@section('ogImage', asset('{{env("BACKEND_URL")}}/storage/{{$news->image}}'))
 
 @section('twitterTitle', $news->title)
 @section('twitterDescription', $news->excerpt)
 @section('twitterUrl', route('news.show', $news->slug))
-@section('twitterImage', asset('https://www.admin.rifatewu2.xyz/storage/images/csHMYQFLwgqKVRnGVG9FhCdD08LIAHBtgGG1WMcF.webp'))
+@section('twitterImage', asset('{{env("BACKEND_URL")}}/storage/{{$news->image}}'))
     {{-- page title --}}
     
     {{-- page content --}}
