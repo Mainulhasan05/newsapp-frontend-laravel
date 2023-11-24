@@ -4,9 +4,12 @@
 
 @section('ogTitle', $news->title)
 @section('ogDescription', $news->description)
-
+<meta property="og:title" content="{{ $news->title }}">
+    <meta property="og:description" content="{{ $news->description }}">
+    <meta property="og:image" content="{{ env('BACKEND_URL') }}/storage/{{ $news->image }}">
+{{-- 
 @section('ogUrl', route('news.show', $news->slug))
-@section('ogImage', '{{env("BACKEND_URL")}}/storage/{{$news->image}}')
+@section('ogImage', '{{env("BACKEND_URL")}}/storage/{{$news->image}}') --}}
 
 @section('twitterTitle', $news->title)
 @section('twitterDescription', $news->excerpt)
