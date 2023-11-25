@@ -37,17 +37,12 @@ class CategoriesController extends Controller
      */
     // show will receive slug as parameter
     public function show($slug){
-        // get category by slug
-        $category=Categories::where('slug',$slug)->firstOrFail();
-        $latest_news=News::orderBy('id','desc')->take(5)->get();
-        // get featured news 10
-        $featured_news=News::where('is_featured',1)->orderBy('id','desc')->take(10)->get();
-        // get all news of this category
+        $latest_news = News::where('category_slug', $slug)
+        ->paginate(10);
         
-        // get trending news
-        $trending_news=News::orderBy('views','desc')->take(5)->get();
-        print_r($category);
-        return view('category',compact('category','latest_news','trending_news','featured_news','trending_news'));
+        $category = Categories::where('slug', $slug)->firstOrFail();
+        return view('category', compact('category','latest_news'));
+
     }
 
     /**
