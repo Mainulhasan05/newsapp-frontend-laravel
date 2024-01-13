@@ -6,6 +6,7 @@ use App\Models\Categories;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\UserController;
 
 Route::get('/get',function (){
     return Categories::all();
@@ -23,6 +24,11 @@ Route::get('/category/{slug}', [CategoriesController::class, 'show'])->name('cat
 Route::get('/login',function(){
     return view('login');
 })->name('login');
+
+Route::get('/register',function(){
+    return view('register');
+})->name('register');
+Route::post('/register',[UserController::class,'register'])->name('register.post');
 
 Route::get("/news",function(){
     return view('news');
