@@ -20,7 +20,6 @@ function removeValidationClasses(form){
         $(form).find(":input").removeClass('is-invalid is-valid');
     });
 }
-
 function showMessage(type,message){
     return `<div class="alert alert-${type} alert-dismissible fade show" role="alert">
     <strong>${message}</strong>
