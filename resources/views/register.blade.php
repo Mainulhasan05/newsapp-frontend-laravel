@@ -64,7 +64,22 @@
                 },
                 dataType: 'json',
                 success: function(res){
-                    console.log(res);
+                    if(res.status==400){
+                        console.log(res.message)
+                        console.log(res)
+                        showError('name', res.message.name[0]);
+                        showError('email', res.message.email);
+                        showError('password', res.message.password);
+                        showError('cpassword', res.message.cpassword);
+                        $("#register_btn").val('Register');
+                    }
+                    else if(res.status==200){
+                        $("#register_form")[0].reset();
+                        $("#register_btn").val('Register');
+                        $("#show_success_alert").html(showMessage('success', res.messages));
+                        removeValidationClasses("#register_form");
+                        // window.location.href = "{{ route('login') }}";
+                    }
                 }
             })
         });

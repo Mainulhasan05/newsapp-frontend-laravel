@@ -40,11 +40,5 @@ class UserController extends Controller
                 "message" => "User created successfully"
             ]);
         }
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email; 
-        $user->password = Hash::make($request->password);
-        $user->save();
-        return redirect()->route('login')->with('success','User created successfully');
     }
 }
