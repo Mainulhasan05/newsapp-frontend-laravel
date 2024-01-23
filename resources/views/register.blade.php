@@ -23,12 +23,14 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <input id="password" type="password" class="form-control p-4" placeholder="Password" />
+                            <div class="invalid-feedback"></div>
                         </div>
                     </div>
 
                     <div class="col-md-12">
                         <div class="form-group">
                             <input id="cpassword" type="password" class="form-control p-4" placeholder="Confirm Password" />
+                            <div class="invalid-feedback"></div>
                         </div>
                     </div>
                 </div>
