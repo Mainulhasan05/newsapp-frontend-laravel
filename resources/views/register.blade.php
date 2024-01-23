@@ -68,8 +68,10 @@
                 success: function(res){
                     if(res.status==400){
                         console.log(res.message)
-                        console.log(res)
-                        showError('name', res.message.name[0]);
+                        console.log("aikhan theke")
+                        
+                        showError('name', res.message.name);
+                        console.log("achi")
                         showError('email', res.message.email);
                         showError('password', res.message.password);
                         showError('cpassword', res.message.cpassword);
