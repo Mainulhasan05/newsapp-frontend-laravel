@@ -9,6 +9,7 @@
                     @csrf
                     <div class="form-row">
                         <div class="col-md-12">
+                            <div id="login_alert"></div>
                             <div class="form-group">
                                 <input id="email" type="text" class="form-control p-4" placeholder="Your Email"
                                     required="required" />
@@ -54,13 +55,23 @@
             },
             dataType: "json",
             success: function(response) {
-                if (response.status) {
+                if (response.status==200) {
                     $("#login_btn").val('Login');
                     $("#login_form").trigger('reset');
-                    window.location.href = "{{ url('dashboard') }}";
-                } else {
+                    $("#login_alert").html(showMessage('success', response.message));
+                    setTimeout(function() {
+                        window.location.href = "{{ url('profile') }}";
+                    }, 2000);
+                    
+                }
+                else if(response.status == 400){
+                    showError('email', response.message.email);
+                    showError('password', response.message.password);
                     $("#login_btn").val('Login');
-                    $("#login_form .invalid-feedback").html(response.msg);
+                }
+                 else {
+                    $("#login_btn").val('Login');
+                    $("#login_alert").html(showMessage('danger', response.message));
                 }
             }
         });
