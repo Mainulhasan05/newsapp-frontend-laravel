@@ -40,7 +40,7 @@
                         type="submit">Register</button> --}}
                     <input type="submit" class="btn btn-primary btn-block font-weight-semi-bold px-4" value="Register" id="register_btn">
                 </div>
-                <a class="my-3 text-secondary" href="{{url('register')}}">New Here? Register</a>
+                <a class="my-3 text-secondary" href="{{url('login')}}">Have an account? Login</a>
             </form>
         </div>
     </div>

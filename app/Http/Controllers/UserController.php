@@ -15,8 +15,8 @@ class UserController extends Controller
         $validator= Validator::make($request->all(), [
             'name' => 'required|max:55',
             'email' => 'required|unique:users|max:255',
-            'password' => 'required|max:255',
-            'cpassword' => 'required|min:6|same:password'
+            'password' => 'required|min:5|max:255',
+            'cpassword' => 'required|min:5|same:password'
         ],[
             'name.required' => 'Name is required',
             'email.required' => 'Email is required',
@@ -39,6 +39,38 @@ class UserController extends Controller
                 "status" => 200,
                 "message" => "User created successfully"
             ]);
+        }
+    }
+
+    public function login(Request $request){
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|max:255',
+            'password' => 'required|min:5|max:255',
+        ],[
+            'email.required' => 'Email is required',
+            'password.required' => 'Password is required',
+        ]);
+        if ($validator->fails()) {
+            return response()->json([
+                "status" => 400,
+                "message" => $validator->getMessageBag()
+            ]);
+        }
+        else{
+            $user= User::where('email',$request->email)->first();
+            if(!$user || !Hash::check($request->password,$user->password)){
+                return response()->json([
+                    "status" => 400,
+                    "message" => "Email or Password is incorrect"
+                ]);
+            }
+            else{
+                $request->session()->put('user',$user);
+                return response()->json([
+                    "status" => 200,
+                    "message" => "User logged in successfully"
+                ]);
+            }
         }
     }
 }
