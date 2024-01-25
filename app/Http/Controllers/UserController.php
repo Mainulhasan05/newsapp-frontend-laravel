@@ -73,4 +73,21 @@ class UserController extends Controller
             }
         }
     }
+
+    public function logout(Request $request){
+        if($request->session()->has('user')){
+            $request->session()->pull('user');
+            return redirect('/login');
+        }
+        else{
+            return response()->json([
+                "status" => 400,
+                "message" => "User not logged in"
+            ]);
+        }
+    }
+
+    public function profile(Request $request){
+        return view('profile');
+    }
 }
