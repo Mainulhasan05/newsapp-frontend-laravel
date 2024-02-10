@@ -20,7 +20,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $categories=Categories::all();
+        $categories = Categories::take(10)->get();
         View::share('categories', $categories);
+
     }
 }
