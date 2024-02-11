@@ -6,15 +6,15 @@
 @section('ogDescription', $news->description)
 <meta property="og:title" content="{{ $news->title }}">
     <meta property="og:description" content="{{ $news->description }}">
-    <meta property="og:image" content="{{ env('BACKEND_URL') }}/storage/{{ $news->image }}">
+    <meta property="og:image" content="{{ env('BACKEND_URL') }}/images/{{ $news->image }}">
 {{-- 
 @section('ogUrl', route('news.show', $news->slug))
-@section('ogImage', '{{env("BACKEND_URL")}}/storage/{{$news->image}}') --}}
+@section('ogImage', '{{env("BACKEND_URL")}}/images/{{$news->image}}') --}}
 
 @section('twitterTitle', $news->title)
 @section('twitterDescription', $news->excerpt)
 @section('twitterUrl', route('news.show', $news->slug))
-@section('twitterImage', '{{env("BACKEND_URL")}}/storage/{{$news->image}}')
+@section('twitterImage', '{{env("BACKEND_URL")}}/images/{{$news->image}}')
     {{-- page title --}}
     
     {{-- page content --}}
@@ -53,7 +53,7 @@
                     <div class="col-lg-8">
                         <!-- News Detail Start -->
                         <div class="position-relative mb-3">
-                            <img class="img-fluid w-100" src="{{env("BACKEND_URL")}}/storage/{{$news->image}}" style="object-fit: cover;">
+                            <img class="img-fluid w-100" src="{{env("BACKEND_URL")}}/images/{{$news->image}}" style="object-fit: cover;">
                             <div class="bg-white border border-top-0 p-4">
                                 <div class="mb-3">
                                     <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
@@ -217,7 +217,7 @@
 
                                 @foreach ($trending_news as $news)
                                 <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                    {{-- <img class="img-fluid" src="{{env("BACKEND_URL")}}/storage/{{$news->image}}" alt=""> --}}
+                                    {{-- <img class="img-fluid" src="{{env("BACKEND_URL")}}/images/{{$news->image}}" alt=""> --}}
                                     <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                         <div class="mb-2">
                                             <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
