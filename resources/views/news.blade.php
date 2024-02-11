@@ -6,7 +6,7 @@
 @section('ogDescription', $news->description)
 <meta property="og:title" content="{{ $news->title }}">
     <meta property="og:description" content="{{ $news->description }}">
-    <meta property="og:image" content="{{ env('BACKEND_URL') }}/images/{{ $news->image }}">
+    <meta property="og:image" content="{{ env('BAoCKEND_URL') }}/images/{{ $news->image }}">
 {{-- 
 @section('ogUrl', route('news.show', $news->slug))
 @section('ogImage', '{{env("BACKEND_URL")}}/images/{{$news->image}}') --}}
@@ -67,7 +67,7 @@
                                     </a>
                                 </div>
                                 <h1 class="mb-3 text-secondary text-uppercase font-weight-bold">{{$news->title}}</h1>
-                                <p>{!!$news->description!!}</p>
+                                <p>{!!$news->description_bn!!}</p>
                                 
                             </div>
                             <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
