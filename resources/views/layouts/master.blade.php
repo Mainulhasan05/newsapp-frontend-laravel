@@ -61,6 +61,15 @@
                 <nav class="navbar navbar-expand-sm bg-dark p-0">
                     <ul class="navbar-nav ml-auto mr-n2">
                         <li class="nav-item">
+                            <a class="nav-link text-body" href="#">
+                                @if (session()->get('lang')=='bangla')
+                                <small class="text-white fw-bold">Bangla</small>
+                                @else
+                                <small class="text-white fw-bold">English</small>
+                                @endif
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-body" href="#"><small class="fab fa-twitter"></small></a>
                         </li>
                         <li class="nav-item">
