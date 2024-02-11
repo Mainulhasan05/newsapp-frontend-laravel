@@ -1,17 +1,17 @@
 {{-- extend master layout --}}
 @extends('layouts.master')
-{{-- https://www.admin.rifatewu2.xyz/storage/images/csHMYQFLwgqKVRnGVG9FhCdD08LIAHBtgGG1WMcF.webp --}}
+{{-- https://www.admin.rifatewu2.xyz/images/images/csHMYQFLwgqKVRnGVG9FhCdD08LIAHBtgGG1WMcF.webp --}}
 {{-- @section('title', $article->title)
 
 @section('ogTitle', $article->title)
 @section('ogDescription', $article->excerpt)
 @section('ogUrl', route('news.show', $article->slug)) --}}
-@section('ogImage', asset('https://www.admin.rifatewu2.xyz/storage/images/csHMYQFLwgqKVRnGVG9FhCdD08LIAHBtgGG1WMcF.webp'))
+@section('ogImage', asset('https://www.admin.rifatewu2.xyz/images/images/csHMYQFLwgqKVRnGVG9FhCdD08LIAHBtgGG1WMcF.webp'))
 {{-- 
 @section('twitterTitle', $article->title)
 @section('twitterDescription', $article->excerpt)
 @section('twitterUrl', route('news.show', $article->slug)) --}}
-@section('twitterImage', asset('https://www.admin.rifatewu2.xyz/storage/images/csHMYQFLwgqKVRnGVG9FhCdD08LIAHBtgGG1WMcF.webp'))
+@section('twitterImage', asset('https://www.admin.rifatewu2.xyz/images/images/csHMYQFLwgqKVRnGVG9FhCdD08LIAHBtgGG1WMcF.webp'))
     {{-- page title --}}
     @section('title', 'Kawsar News Portal')
     {{-- page content --}}
@@ -23,9 +23,9 @@
             <div class="col-lg-7 px-0">
                 <div class="owl-carousel main-carousel position-relative">
 
-                    @foreach ($header_news as $news)
+                    @foreach ($big_thumbnail_news as $news)
                     <div class="position-relative overflow-hidden" style="height: 500px;">
-                        <img class="img-fluid h-100" src="{{env("BACKEND_URL")}}/storage/{{$news->image}}"
+                        <img class="img-fluid h-100" src="{{env("BACKEND_URL")}}/images/{{$news->image}}"
                          style="object-fit: cover;">
                         <div class="overlay">
                             <div class="mb-2">
@@ -139,10 +139,10 @@
             <div class="owl-carousel news-carousel carousel-item-4 position-relative">
 
                 {{-- show all featured news --}}
-                @foreach ($featured_news as $news)
+                @foreach ($header_news as $news)
                 <div class="position-relative overflow-hidden" style="height: 300px;">
                     <a href="{{ route('news.show', ['slug' => $news->slug]) }}">
-                        <img class="img-fluid h-100" src="{{env("BACKEND_URL")}}/storage/{{$news->image}}" style="object-fit: cover;">
+                        <img class="img-fluid h-100" src="{{env("BACKEND_URL")}}/images/{{$news->image}}" style="object-fit: cover;">
                     </a>
                     <div class="overlay">
                         <div class="mb-2">
@@ -187,7 +187,7 @@
                             <div class="position-relative mb-3">
                                 {{-- <img class="img-fluid w-100" src="{{env('BACKEND_URL').$news->image}}" style="object-fit: cover;"> --}}
                                 <a href="{{ route('news.show', ['slug' => $news->slug]) }}">
-                                <img class="img-fluid w-100" src="{{env("BACKEND_URL")}}/storage/{{$news->image}}" style="object-fit: cover;">
+                                <img class="img-fluid w-100" src="{{env("BACKEND_URL")}}/images/{{$news->image}}" style="object-fit: cover;">
                             </a>
                                 
                                 <div class="bg-white border border-top-0 p-4">
@@ -219,7 +219,7 @@
                         @foreach ($latest_news as $news)
                         <div class="col-lg-6">
                             <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <img width="100" height="100" class="img-fluid" src="{{env("BACKEND_URL")}}/storage/{{$news->image}}" alt="">
+                                <img width="100" height="100" class="img-fluid" src="{{env("BACKEND_URL")}}/images/{{$news->image}}" alt="">
                                 <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                     <div class="mb-2">
                                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>

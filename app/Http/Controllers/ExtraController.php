@@ -9,10 +9,10 @@ class ExtraController extends Controller
     public function English()
     {
         $lang=session()->get('lang');
-        if($lang=='en'){
-            session()->put('lang','en');
+        if($lang=='bangla'){
+            session()->put('lang','bangla');
         }else{
-            session()->put('lang','en');
+            session()->put('lang','english');
         }
         return redirect()->back();
     }
