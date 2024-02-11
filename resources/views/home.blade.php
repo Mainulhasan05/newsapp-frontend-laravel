@@ -38,7 +38,7 @@
                                 </a>
                             </div>
                             <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="{{ route('news.show', ['slug' => $news->slug]) }}">
-                                {{$news->title}}
+                                {{$news->title_bn}}
                             </a>
                         </div>
                     </div>
@@ -153,7 +153,7 @@
                             </small></a>
                         </div>
                         <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="{{ route('news.show', ['slug' => $news->slug]) }}">
-                            {{$news->title}}
+                            {{$news->title_bn}}
                         </a>
                     </div>
                 </div>
@@ -197,7 +197,7 @@
                                         <a class="text-body" href=""><small>
                                             {{ \Carbon\Carbon::parse($news->created_at)->format('M d, Y') }}    </small></a>
                                     </div>
-                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="{{ route('news.show', ['slug' => $news->slug]) }}">{{$news->title}}</a>
+                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="{{ route('news.show', ['slug' => $news->slug]) }}">{{$news->title_bn}}</a>
                                     <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
                                         rebum clita rebum dolor stet amet justo</p>
                                 </div>
@@ -227,7 +227,7 @@
                                             {{ \Carbon\Carbon::parse($news->created_at)->format('M d, Y') }}    </small></a>
                                     </div>
                                     
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="{{ route('news.show', ['slug' => $news->slug]) }}">{{$news->title}}</a>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="{{ route('news.show', ['slug' => $news->slug]) }}">{{$news->title_bn}}</a>
                                 </div>
                             </div>
                             
