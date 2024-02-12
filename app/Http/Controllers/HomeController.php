@@ -18,8 +18,11 @@ class HomeController extends Controller
         $first_section_thumbnail_news=Posts::where('first_section_thumbnail',1)->orderBy('id','desc')->take(10)->get();
         $big_thumbnail_news=Posts::where('big_thumbnail',1)->orderBy('id','desc')->take(10)->get();
  
-        // return response()->json(['categories'=>$categories,'latest_news'=>$latest_news,'first_section_thumbnail_news'=>$first_section_thumbnail_news]);
-        return view("home",['categories'=>$categories,'latest_news'=>$latest_news,'first_section_thumbnail_news'=>$first_section_thumbnail_news]
-        ,['big_thumbnail_news'=>$big_thumbnail_news,'header_news'=>$header_news]);
+        // return response()->json(
+        //     ['categories'=>$categories,'latest_news'=>$latest_news,'first_section_thumbnail_news'=>$first_section_thumbnail_news
+        //  ,'big_thumbnail_news'=>$big_thumbnail_news,'header_news'=>$header_news]
+        // );
+        return view("home",['categories'=>$categories,'latest_news'=>$latest_news,'first_section_thumbnail_news'=>$first_section_thumbnail_news
+        ,'big_thumbnail_news'=>$big_thumbnail_news,'header_news'=>$header_news]);
     }
 }

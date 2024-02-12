@@ -2,28 +2,24 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Session;
 class ExtraController extends Controller
 {
     public function English()
     {
-        $lang=session()->get('lang');
-        if($lang=='bangla'){
-            session()->put('lang','bangla');
-        }else{
-            session()->put('lang','english');
-        }
+        Session::get('lang');
+        session()->forget('lang');
+        Session()->put('lang','english');
         return redirect()->back();
     }
     public function Bangla()
     {
-        $lang=session()->get('lang');
-        if($lang=='bn'){
-            session()->put('lang','bn');
-        }else{
-            session()->put('lang','bn');
-        }
+        Session::get('lang');
+        session()->forget('lang');
+        Session()->put('lang','bangla');
         return redirect()->back();
     }
 }

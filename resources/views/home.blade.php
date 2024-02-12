@@ -6,17 +6,19 @@
 @section('ogTitle', $article->title)
 @section('ogDescription', $article->excerpt)
 @section('ogUrl', route('news.show', $article->slug)) --}}
-@section('ogImage', asset('https://www.admin.rifatewu2.xyz/images/images/csHMYQFLwgqKVRnGVG9FhCdD08LIAHBtgGG1WMcF.webp'))
-{{-- 
+@section('ogImage',
+    asset('https://www.admin.rifatewu2.xyz/images/images/csHMYQFLwgqKVRnGVG9FhCdD08LIAHBtgGG1WMcF.webp'))
+    {{-- 
 @section('twitterTitle', $article->title)
 @section('twitterDescription', $article->excerpt)
 @section('twitterUrl', route('news.show', $article->slug)) --}}
-@section('twitterImage', asset('https://www.admin.rifatewu2.xyz/images/images/csHMYQFLwgqKVRnGVG9FhCdD08LIAHBtgGG1WMcF.webp'))
+@section('twitterImage',
+    asset('https://www.admin.rifatewu2.xyz/images/images/csHMYQFLwgqKVRnGVG9FhCdD08LIAHBtgGG1WMcF.webp'))
     {{-- page title --}}
-    @section('title', 'Kawsar News Portal')
-    {{-- page content --}}
-    @section('content')
-    
+@section('title', 'Kawsar News Portal')
+{{-- page content --}}
+@section('content')
+
     <!-- Main News Slider Start -->
     <div class="container-fluid">
         <div class="row">
@@ -24,27 +26,27 @@
                 <div class="owl-carousel main-carousel position-relative">
 
                     @foreach ($big_thumbnail_news as $news)
-                    <div class="position-relative overflow-hidden" style="height: 500px;">
-                        <img class="img-fluid h-100" src="{{env("BACKEND_URL")}}/images/{{$news->image}}"
-                         style="object-fit: cover;">
-                        <div class="overlay">
-                            <div class="mb-2">
-                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                    href="">Business</a>
-                                <a class="text-white" href="">
-                                    <small>
-                                        {{ \Carbon\Carbon::parse($news->created_at)->format('M d, Y') }}
-                                    </small>
+                        <div class="position-relative overflow-hidden" style="height: 500px;">
+                            <img class="img-fluid h-100" src="{{ env('BACKEND_URL') }}/images/{{ $news->image }}"
+                                style="object-fit: cover;">
+                            <div class="overlay">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                        href="">Business</a>
+                                    <a class="text-white" href="">
+                                        <small>
+                                            {{ \Carbon\Carbon::parse($news->created_at)->format('M d, Y') }}
+                                        </small>
+                                    </a>
+                                </div>
+                                <a class="h2 m-0 text-white text-uppercase font-weight-bold"
+                                    href="{{ route('news.show', ['slug' => $news->slug]) }}">
+                                    {{ $news->title_bn }}
                                 </a>
                             </div>
-                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="{{ route('news.show', ['slug' => $news->slug]) }}">
-                                {{$news->title_bn}}
-                            </a>
                         </div>
-                    </div>
-                        
                     @endforeach
-                    
+
                 </div>
             </div>
             <div class="col-lg-5 px-0">
@@ -58,7 +60,8 @@
                                         href="">Business</a>
                                     <a class="text-white" href=""><small>Jan 01, 2045</small></a>
                                 </div>
-                                <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum
+                                    dolor sit amet elit...</a>
                             </div>
                         </div>
                     </div>
@@ -71,7 +74,8 @@
                                         href="">Business</a>
                                     <a class="text-white" href=""><small>Jan 01, 2045</small></a>
                                 </div>
-                                <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum
+                                    dolor sit amet elit...</a>
                             </div>
                         </div>
                     </div>
@@ -84,7 +88,8 @@
                                         href="">Business</a>
                                     <a class="text-white" href=""><small>Jan 01, 2045</small></a>
                                 </div>
-                                <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum
+                                    dolor sit amet elit...</a>
                             </div>
                         </div>
                     </div>
@@ -97,7 +102,8 @@
                                         href="">Business</a>
                                     <a class="text-white" href=""><small>Jan 01, 2045</small></a>
                                 </div>
-                                <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum
+                                    dolor sit amet elit...</a>
                             </div>
                         </div>
                     </div>
@@ -114,12 +120,18 @@
             <div class="row align-items-center bg-dark">
                 <div class="col-12">
                     <div class="d-flex justify-content-between">
-                        <div class="bg-primary text-dark text-center font-weight-medium py-2" style="width: 170px;">Breaking News</div>
+                        <div class="bg-primary text-dark text-center font-weight-medium py-2" style="width: 170px;">Breaking
+                            News</div>
                         <div class="owl-carousel tranding-carousel position-relative d-inline-flex align-items-center ml-3"
                             style="width: calc(100% - 170px); padding-right: 90px;">
                             <marquee>
-                            <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit. Proin interdum lacus eget ante tincidunt, sed faucibus nisl sodales</a>
-                            <a class="text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit. Proin interdum lacus eget ante tincidunt, sed faucibus nisl sodales</a></div>
+                                <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold"
+                                        href="">Lorem ipsum dolor sit amet elit. Proin interdum lacus eget ante
+                                        tincidunt, sed faucibus nisl sodales</a>
+                                    <a class="text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum
+                                        dolor sit amet elit. Proin interdum lacus eget ante tincidunt, sed faucibus nisl
+                                        sodales</a>
+                                </div>
                             </marquee>
                         </div>
                     </div>
@@ -140,27 +152,35 @@
 
                 {{-- show all featured news --}}
                 @foreach ($header_news as $news)
-                <div class="position-relative overflow-hidden" style="height: 300px;">
-                    <a href="{{ route('news.show', ['slug' => $news->slug]) }}">
-                        <img class="img-fluid h-100" src="{{env("BACKEND_URL")}}/images/{{$news->image}}" style="object-fit: cover;">
-                    </a>
-                    <div class="overlay">
-                        <div class="mb-2">
-                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                href="">Business</a>
-                            <a class="text-white" href=""><small>
-                            {{ \Carbon\Carbon::parse($news->created_at)->format('M d, Y') }}    
-                            </small></a>
-                        </div>
-                        <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="{{ route('news.show', ['slug' => $news->slug]) }}">
-                            {{$news->title_bn}}
+                    <div class="position-relative overflow-hidden" style="height: 300px;">
+                        <a href="{{ route('news.show', ['slug' => $news->slug]) }}">
+                            <img class="img-fluid h-100" src="{{ env('BACKEND_URL') }}/images/{{ $news->image }}"
+                                style="object-fit: cover;">
                         </a>
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                    href="">Business</a>
+                                <a class="text-white" href=""><small>
+                                        {{ \Carbon\Carbon::parse($news->created_at)->format('M d, Y') }}
+                                    </small></a>
+                            </div>
+                            <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold"
+                                href="{{ route('news.show', ['slug' => $news->slug]) }}">
+                                @if (session()->get('lang') == 'bangla')
+                                {{ $news->title_bn }}
+                                @else
+                                {{ $news->title_en }}
+                                @endif
+                                
+
+                            </a>
+                        </div>
                     </div>
-                </div>
                 @endforeach
                 {{-- end show all featured news --}}
 
-                
+
             </div>
         </div>
     </div>
@@ -176,69 +196,77 @@
                         <div class="col-12">
                             <div class="section-title">
                                 <h4 class="m-0 text-uppercase font-weight-bold">Latest News</h4>
-                                <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
+                                <a class="text-secondary font-weight-medium text-decoration-none" href="">View
+                                    All</a>
                             </div>
                         </div>
                         {{-- show all latest nes --}}
                         @foreach ($latest_news as $news)
-                            
-                        
-                        <div class="col-lg-6">
-                            <div class="position-relative mb-3">
-                                {{-- <img class="img-fluid w-100" src="{{env('BACKEND_URL').$news->image}}" style="object-fit: cover;"> --}}
-                                <a href="{{ route('news.show', ['slug' => $news->slug]) }}">
-                                <img class="img-fluid w-100" src="{{env("BACKEND_URL")}}/images/{{$news->image}}" style="object-fit: cover;">
-                            </a>
-                                
-                                <div class="bg-white border border-top-0 p-4">
-                                    <div class="mb-2">
-                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                            href="">Business</a>
-                                        <a class="text-body" href=""><small>
-                                            {{ \Carbon\Carbon::parse($news->created_at)->format('M d, Y') }}    </small></a>
+                            <div class="col-lg-6">
+                                <div class="position-relative mb-3">
+                                    {{-- <img class="img-fluid w-100" src="{{env('BACKEND_URL').$news->image}}" style="object-fit: cover;"> --}}
+                                    <a href="{{ route('news.show', ['slug' => $news->slug]) }}">
+                                        <img class="img-fluid w-100"
+                                            src="{{ env('BACKEND_URL') }}/images/{{ $news->image }}"
+                                            style="object-fit: cover;">
+                                    </a>
+
+                                    <div class="bg-white border border-top-0 p-4">
+                                        <div class="mb-2">
+                                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                                href="">Business</a>
+                                            <a class="text-body" href=""><small>
+                                                    {{ \Carbon\Carbon::parse($news->created_at)->format('M d, Y') }}
+                                                </small></a>
+                                        </div>
+                                        <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold"
+                                            href="{{ route('news.show', ['slug' => $news->slug]) }}">{{ $news->title_bn }}</a>
+                                        <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
+                                            rebum clita rebum dolor stet amet justo</p>
                                     </div>
-                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="{{ route('news.show', ['slug' => $news->slug]) }}">{{$news->title_bn}}</a>
-                                    <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                                        rebum clita rebum dolor stet amet justo</p>
-                                </div>
-                                <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
-                                    <div class="d-flex align-items-center">
-                                        <img class="rounded-circle mr-2" src="img/user.jpg" width="25" height="25" alt="">
-                                        <small>John Doe</small>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <small class="ml-3"><i class="far fa-eye mr-2"></i>{{$news->views}}</small>
-                                        <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                    <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                        <div class="d-flex align-items-center">
+                                            <img class="rounded-circle mr-2" src="img/user.jpg" width="25"
+                                                height="25" alt="">
+                                            <small>John Doe</small>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <small class="ml-3"><i
+                                                    class="far fa-eye mr-2"></i>{{ $news->views }}</small>
+                                            <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
                         {{-- end show all latest nes --}}
-                       
-                        @foreach ($latest_news as $news)
-                        <div class="col-lg-6">
-                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <img width="100" height="100" class="img-fluid" src="{{env("BACKEND_URL")}}/images/{{$news->image}}" alt="">
-                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                                    <div class="mb-2">
-                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
-                                        <a class="text-body" href=""><small>
-                                            {{ \Carbon\Carbon::parse($news->created_at)->format('M d, Y') }}    </small></a>
-                                    </div>
-                                    
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="{{ route('news.show', ['slug' => $news->slug]) }}">{{$news->title_bn}}</a>
-                                </div>
-                            </div>
-                            
-                        </div>
 
-                            
+                        @foreach ($latest_news as $news)
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                    <img width="100" height="100" class="img-fluid"
+                                        src="{{ env('BACKEND_URL') }}/images/{{ $news->image }}" alt="">
+                                    <div
+                                        class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                        <div class="mb-2">
+                                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                                                href="">Business</a>
+                                            <a class="text-body" href=""><small>
+                                                    {{ \Carbon\Carbon::parse($news->created_at)->format('M d, Y') }}
+                                                </small></a>
+                                        </div>
+
+                                        <a class="h6 m-0 text-secondary text-uppercase font-weight-bold"
+                                            href="{{ route('news.show', ['slug' => $news->slug]) }}">{{ $news->title_bn }}</a>
+                                    </div>
+                                </div>
+
+                            </div>
                         @endforeach
-                        
+
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4">
                     <!-- Social Follow Start -->
                     <div class="mb-3">
@@ -246,28 +274,40 @@
                             <h4 class="m-0 text-uppercase font-weight-bold">Follow Us</h4>
                         </div>
                         <div class="bg-white border border-top-0 p-3">
-                            <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #39569E;">
-                                <i class="fab fa-facebook-f text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <a href="" class="d-block w-100 text-white text-decoration-none mb-3"
+                                style="background: #39569E;">
+                                <i class="fab fa-facebook-f text-center py-4 mr-3"
+                                    style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
                                 <span class="font-weight-medium">12,345 Fans</span>
                             </a>
-                            <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #52AAF4;">
-                                <i class="fab fa-twitter text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <a href="" class="d-block w-100 text-white text-decoration-none mb-3"
+                                style="background: #52AAF4;">
+                                <i class="fab fa-twitter text-center py-4 mr-3"
+                                    style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
                                 <span class="font-weight-medium">12,345 Followers</span>
                             </a>
-                            <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #0185AE;">
-                                <i class="fab fa-linkedin-in text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <a href="" class="d-block w-100 text-white text-decoration-none mb-3"
+                                style="background: #0185AE;">
+                                <i class="fab fa-linkedin-in text-center py-4 mr-3"
+                                    style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
                                 <span class="font-weight-medium">12,345 Connects</span>
                             </a>
-                            <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #C8359D;">
-                                <i class="fab fa-instagram text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <a href="" class="d-block w-100 text-white text-decoration-none mb-3"
+                                style="background: #C8359D;">
+                                <i class="fab fa-instagram text-center py-4 mr-3"
+                                    style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
                                 <span class="font-weight-medium">12,345 Followers</span>
                             </a>
-                            <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #DC472E;">
-                                <i class="fab fa-youtube text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <a href="" class="d-block w-100 text-white text-decoration-none mb-3"
+                                style="background: #DC472E;">
+                                <i class="fab fa-youtube text-center py-4 mr-3"
+                                    style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
                                 <span class="font-weight-medium">12,345 Subscribers</span>
                             </a>
-                            <a href="" class="d-block w-100 text-white text-decoration-none" style="background: #055570;">
-                                <i class="fab fa-vimeo-v text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <a href="" class="d-block w-100 text-white text-decoration-none"
+                                style="background: #055570;">
+                                <i class="fab fa-vimeo-v text-center py-4 mr-3"
+                                    style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
                                 <span class="font-weight-medium">12,345 Followers</span>
                             </a>
                         </div>
@@ -293,52 +333,67 @@
                         <div class="bg-white border border-top-0 p-3">
                             <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
                                 <img class="img-fluid" src="img/news-110x110-1.jpg" alt="">
-                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div
+                                    class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                     <div class="mb-2">
-                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                                            href="">Business</a>
                                         <a class="text-body" href=""><small>Jan 01, 2045</small></a>
                                     </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem
+                                        ipsum dolor sit amet elit...</a>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
                                 <img class="img-fluid" src="img/news-110x110-2.jpg" alt="">
-                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div
+                                    class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                     <div class="mb-2">
-                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                                            href="">Business</a>
                                         <a class="text-body" href=""><small>Jan 01, 2045</small></a>
                                     </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem
+                                        ipsum dolor sit amet elit...</a>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
                                 <img class="img-fluid" src="img/news-110x110-3.jpg" alt="">
-                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div
+                                    class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                     <div class="mb-2">
-                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                                            href="">Business</a>
                                         <a class="text-body" href=""><small>Jan 01, 2045</small></a>
                                     </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem
+                                        ipsum dolor sit amet elit...</a>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
                                 <img class="img-fluid" src="img/news-110x110-4.jpg" alt="">
-                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div
+                                    class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                     <div class="mb-2">
-                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                                            href="">Business</a>
                                         <a class="text-body" href=""><small>Jan 01, 2045</small></a>
                                     </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem
+                                        ipsum dolor sit amet elit...</a>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
                                 <img class="img-fluid" src="img/news-110x110-5.jpg" alt="">
-                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div
+                                    class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                     <div class="mb-2">
-                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                                            href="">Business</a>
                                         <a class="text-body" href=""><small>Jan 01, 2045</small></a>
                                     </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem
+                                        ipsum dolor sit amet elit...</a>
                                 </div>
                             </div>
                         </div>
@@ -391,5 +446,4 @@
     <!-- News With Sidebar End -->
 
 
-    @endsection
-    
+@endsection

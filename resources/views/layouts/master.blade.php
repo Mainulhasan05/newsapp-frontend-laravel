@@ -63,9 +63,15 @@
                         <li class="nav-item">
                             <a class="nav-link text-body" href="#">
                                 @if (session()->get('lang')=='bangla')
-                                <small class="text-white fw-bold">Bangla</small>
+                                <small class="text-white fw-bold">
+                                    <a href="{{route('lang.english')}}">English</a>
+                                </small>
                                 @else
-                                <small class="text-white fw-bold">English</small>
+                                <small class="text-white fw-bold">
+                                    <a href="{{route('lang.bangla')}}">
+                                        Bangla
+                                    </a>
+                                </small>
                                 @endif
                             </a>
                         </li>

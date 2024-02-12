@@ -6,6 +6,7 @@ use App\Models\Categories;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\ExtraController;
 use App\Http\Controllers\UserController;
 
 Route::get('/get',function (){
@@ -37,3 +38,6 @@ Route::get("/news",function(){
 });
 Route::get('/logout',[UserController::class,'logout'])->name('auth.logout');
 Route::get('/profile',[UserController::class,'profile'])->name('auth.profile');
+
+Route::get('/lang/english',[ExtraController::class,'English'])->name('lang.english');
+Route::get('/lang/bangla',[ExtraController::class,'Bangla'])->name('lang.bangla');
