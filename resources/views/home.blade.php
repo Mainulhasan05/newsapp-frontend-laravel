@@ -31,7 +31,11 @@
                                 </div>
                                 <a class="h2 m-0 text-white text-uppercase font-weight-bold"
                                     href="{{ route('news.show', ['slug' => $news->slug]) }}">
-                                    {{ $news->title_bn }}
+                                    @if (session()->get('lang') == 'bangla')
+                                {{ $news->title_bn }}
+                                @else
+                                {{ $news->title_en }}
+                                @endif
                                 </a>
                             </div>
                         </div>
@@ -55,7 +59,12 @@
                                     </small></a>
                                 </div>
                                 <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">
-                                    {{$news->title_bn}}</a>
+                                    @if (session()->get('lang') == 'bangla')
+                                {{ $news->title_bn }}
+                                @else
+                                {{ $news->title_en }}
+                                @endif
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -126,8 +135,6 @@
                                 @else
                                 {{ $news->title_en }}
                                 @endif
-                                
-
                             </a>
                         </div>
                     </div>
