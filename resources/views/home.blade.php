@@ -1,4 +1,3 @@
-
 @extends('layouts.master')
 
 @section('ogImage',
@@ -8,14 +7,13 @@
 
 @section('content')
 
-    
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-7 px-0 test">
                 <div class="owl-carousel main-carousel position-relative">
 
                     @foreach ($big_thumbnail_news as $news)
-                    
                         <div class="position-relative overflow-hidden" style="height: 500px;">
                             <img class="img-fluid h-100" src="{{ env('BACKEND_URL') }}/images/{{ $news->image }}"
                                 style="object-fit: cover;">
@@ -32,10 +30,10 @@
                                 <a class="h2 m-0 text-white text-uppercase font-weight-bold"
                                     href="{{ route('news.show', ['slug' => $news->slug]) }}">
                                     @if (session()->get('lang') == 'bangla')
-                                {{ $news->title_bn }}
-                                @else
-                                {{ $news->title_en }}
-                                @endif
+                                        {{ $news->title_bn }}
+                                    @else
+                                        {{ $news->title_en }}
+                                    @endif
                                 </a>
                             </div>
                         </div>
@@ -46,30 +44,30 @@
             <div class="col-lg-5 px-0">
                 <div class="row mx-0">
                     @foreach ($big_thumbnail_news as $news)
-                    <div class="col-md-6 px-0">
-                        <div class="position-relative overflow-hidden" style="height: 250px;">
-                            <img class="img-fluid h-100" src="{{ env('BACKEND_URL') }}/images/{{ $news->image }}"
-                                style="object-fit: cover;">
-                            <div class="overlay">
-                                <div class="mb-2">
-                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                        href="">Business</a>
-                                    <a class="text-white" href=""><small>
-                                    {{ \Carbon\Carbon::parse($news->created_at)->format('M d, Y') }}    
-                                    </small></a>
+                        <div class="col-md-6 px-0">
+                            <div class="position-relative overflow-hidden" style="height: 250px;">
+                                <img class="img-fluid h-100" src="{{ env('BACKEND_URL') }}/images/{{ $news->image }}"
+                                    style="object-fit: cover;">
+                                <div class="overlay">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                            href="">Business</a>
+                                        <a class="text-white" href=""><small>
+                                                {{ \Carbon\Carbon::parse($news->created_at)->format('M d, Y') }}
+                                            </small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">
+                                        @if (session()->get('lang') == 'bangla')
+                                            {{ $news->title_bn }}
+                                        @else
+                                            {{ $news->title_en }}
+                                        @endif
+                                    </a>
                                 </div>
-                                <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">
-                                    @if (session()->get('lang') == 'bangla')
-                                {{ $news->title_bn }}
-                                @else
-                                {{ $news->title_en }}
-                                @endif
-                                </a>
                             </div>
                         </div>
-                    </div>
                     @endforeach
-                    
+
                 </div>
             </div>
         </div>
@@ -131,9 +129,9 @@
                             <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold"
                                 href="{{ route('news.show', ['slug' => $news->slug]) }}">
                                 @if (session()->get('lang') == 'bangla')
-                                {{ $news->title_bn }}
+                                    {{ $news->title_bn }}
                                 @else
-                                {{ $news->title_en }}
+                                    {{ $news->title_en }}
                                 @endif
                             </a>
                         </div>
