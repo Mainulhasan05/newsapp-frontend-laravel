@@ -36,6 +36,7 @@ Route::post('/register',[UserController::class,'register'])->name('register.post
 Route::get("/news",function(){
     return view('news');
 });
+
 Route::get('/logout',[UserController::class,'logout'])->name('auth.logout');
 Route::get('/profile',[UserController::class,'profile'])->name('auth.profile');
 
