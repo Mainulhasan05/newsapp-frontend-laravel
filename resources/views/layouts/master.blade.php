@@ -206,9 +206,17 @@
                     
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h5 class="mb-4 text-white text-uppercase font-weight-bold">Flickr Photos</h5>
-                <div class="row">
+            <div class="col-lg-3 col-md-6 mb-5" style="color:white">
+                উপদেষ্টা সম্পাদকঃ সাজ্জাদ আলম খান তপু <br>
+                প্রকাশকঃ নাজনীন সানজিদা <br>
+                ভারপ্রাপ্ত সম্পাদকঃ ইকবার হাসান কাজল <br>
+                নির্বাহী সম্পাদকঃ কে.এম কাউছার কারাইজ <br> <br>
+                প্রধান কার্যালয়ঃ <br>
+                বাড়ী নম্বর#১৬, ২য় তলা, নম্বর#১, ব্লক# সি, <br>
+                ইসস্টার্ন হাউজিং, রূপনগর, ঢাকা <br><br>
+                
+                {{-- <h5 class="mb-4 text-white text-uppercase font-weight-bold">Flickr Photos</h5> --}}
+                {{-- <div class="row">
                     <div class="col-4 mb-3">
                         <a href=""><img class="w-100" src="img/news-110x110-1.jpg" alt=""></a>
                     </div>
@@ -227,7 +235,7 @@
                     <div class="col-4 mb-3">
                         <a href=""><img class="w-100" src="img/news-110x110-1.jpg" alt=""></a>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
