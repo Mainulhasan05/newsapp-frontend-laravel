@@ -101,7 +101,8 @@
         <div class="row align-items-center bg-white py-3 px-lg-5">
             <div class="col-lg-4">
                 <a href="{{url('/')}}" class="navbar-brand p-0 d-none d-lg-block">
-                    <h1 class="m-0 display-4 text-uppercase text-primary">Kawsar<span class="text-secondary font-weight-normal">News</span></h1>
+                    <img width="250" height="80" src="{{asset('/img/logo.png')}}" alt="">
+                    {{-- <h1 class="m-0 display-4 text-uppercase text-primary">Kawsar<span class="text-secondary font-weight-normal">News</span></h1> --}}
                 </a>
             </div>
             <div class="col-lg-8 text-center text-lg-right">
@@ -116,7 +117,8 @@
     <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-2 py-lg-0 px-lg-5">
             <a href="/" class="navbar-brand d-block d-lg-none">
-                <h1 class="m-0 display-4 text-uppercase text-primary">Kawsar<span class="text-white font-weight-normal">News</span></h1>
+                <img width="200" height="80" src="{{asset('/img/logo.png')}}" alt="">
+                {{-- <h1 class="m-0 display-4 text-uppercase text-primary">Kawsar<span class="text-white font-weight-normal">News</span></h1> --}}
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
