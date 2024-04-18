@@ -89,6 +89,13 @@
                                     <span class="ml-3"><i class="far fa-comment mr-2"></i>123</span>
                                 </div>
                             </div>
+                            <br>
+                            <div class="text-white p-4" style="background: #ab0613">
+                                <p class="text-white">
+                                    আপনার চারপাশে ঘটে যাওয়া নানা খবর, খবরের পিছনের খবর সরাসরি দৈনিক সংবাদ যোগকে জানাতে ই-মেইল করুন - songbadjog71@gmail.com আপনার
+                                    পাঠানো তথ্যের বস্তুনিষ্ঠতা যাচাই করে আমরা তা প্রকাশ করবো।
+                                </p>
+                            </div>
                         </div>
                         <!-- News Detail End -->
     
