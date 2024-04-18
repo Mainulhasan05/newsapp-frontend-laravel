@@ -8,7 +8,7 @@
 @section('content')
 
 
-    <div class="container-fluid">
+    {{-- <div class="container-fluid">
         <div class="row">
             <div class="col-lg-7 px-0 test">
                 <div class="owl-carousel main-carousel position-relative">
@@ -29,7 +29,7 @@
                                 </div>
                                 <a class="h2 m-0 text-white text-uppercase font-weight-bold"
                                     href="{{ route('news.show', ['slug' => $news->slug]) }}">
-                                    @if (session()->get('lang') == 'bangla')
+                                    @if (session()->get('lang') != 'bangla')
                                         {{ $news->title_bn }}
                                     @else
                                         {{ $news->title_en }}
@@ -57,7 +57,7 @@
                                             </small></a>
                                     </div>
                                     <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">
-                                        @if (session()->get('lang') == 'bangla')
+                                        @if (session()->get('lang') != 'bangla')
                                             {{ $news->title_bn }}
                                         @else
                                             {{ $news->title_en }}
@@ -71,7 +71,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Main News Slider End -->
 
 
@@ -128,7 +128,7 @@
                             </div>
                             <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold"
                                 href="{{ route('news.show', ['slug' => $news->slug]) }}">
-                                @if (session()->get('lang') == 'bangla')
+                                @if (session()->get('lang') != 'bangla')
                                     {{ $news->title_bn }}
                                 @else
                                     {{ $news->title_en }}
@@ -150,7 +150,7 @@
     <div class="container-fluid">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     <div class="row">
                         <div class="col-12">
                             <div class="section-title">
@@ -161,11 +161,11 @@
                         </div>
                         {{-- show all latest nes --}}
                         @foreach ($latest_news as $news)
-                            <div class="col-lg-6">
+                            <div class="col-lg-4">
                                 <div class="position-relative mb-3">
                                     {{-- <img class="img-fluid w-100" src="{{env('BACKEND_URL').$news->image}}" style="object-fit: cover;"> --}}
                                     <a href="{{ route('news.show', ['slug' => $news->slug]) }}">
-                                        <img class="img-fluid w-100"
+                                        <img class="img-fluid"
                                             src="{{ env('BACKEND_URL') }}/images/{{ $news->image }}"
                                             style="object-fit: cover;">
                                     </a>
@@ -180,10 +180,10 @@
                                         </div>
                                         <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold"
                                             href="{{ route('news.show', ['slug' => $news->slug]) }}">{{ $news->title_bn }}</a>
-                                        <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                                            rebum clita rebum dolor stet amet justo</p>
+                                        {{-- <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
+                                            rebum clita rebum dolor stet amet justo</p> --}}
                                     </div>
-                                    <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                    {{-- <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
                                         <div class="d-flex align-items-center">
                                             <img class="rounded-circle mr-2" src="img/user.jpg" width="25"
                                                 height="25" alt="">
@@ -194,7 +194,7 @@
                                                     class="far fa-eye mr-2"></i>{{ $news->views }}</small>
                                             <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         @endforeach
@@ -226,7 +226,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4">
+                {{-- <div class="col-lg-4">
                     <!-- Social Follow Start -->
                     <div class="mb-3">
                         <div class="section-title mb-0">
@@ -398,7 +398,7 @@
                         </div>
                     </div>
                     <!-- Tags End -->
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

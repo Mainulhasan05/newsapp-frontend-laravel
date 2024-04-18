@@ -68,7 +68,7 @@
                                 </div>
                                 <h1 class="mb-3 text-secondary text-uppercase font-weight-bold">{{$news->title}}</h1>
                                 <p>
-                                    @if (session()->get('lang') == 'bangla')
+                                    @if (session()->get('lang') != 'bangla')
                                         {!!$news->description_bn!!}
                                     @else
                                         {!!$news->description_en!!}

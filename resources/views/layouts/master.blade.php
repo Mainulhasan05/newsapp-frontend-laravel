@@ -63,7 +63,7 @@
                     <ul class="navbar-nav ml-auto mr-n2">
                         <li class="nav-item">
                             <a class="nav-link text-body" href="#">
-                                @if (session()->get('lang')=='bangla')
+                                @if (session()->get('lang')!='bangla')
                                 <small class="text-white fw-bold">
                                     <a href="{{route('lang.english')}}">English</a>
                                 </small>
@@ -98,16 +98,23 @@
                 </nav>
             </div>
         </div>
-        <div class="row align-items-center bg-white py-3 px-lg-5">
-            <div class="col-lg-4">
-                <a href="{{url('/')}}" class="navbar-brand p-0 d-none d-lg-block">
-                    <img width="250" height="80" src="{{asset('/img/logo.png')}}" alt="">
-                    {{-- <h1 class="m-0 display-4 text-uppercase text-primary">Kawsar<span class="text-secondary font-weight-normal">News</span></h1> --}}
-                </a>
-            </div>
-            <div class="col-lg-8 text-center text-lg-right">
+        <div class="d-flex justify-content-center align-items-center bg-white py-3 px-lg-5">
+            
+                <div>
+                    <a href="{{url('/')}}" class="navbar-brand p-0 text-center mb-3" style="
+                    margin-left: 150px;
+                ">
+                        <img class="img-fluid" width="250" height="80" src="{{asset('/img/logo.png')}}" alt="">
+                    </a>
+                    <p class="text-center">
+                        ঢাকা, ১৮ এপ্রিল ২০২৪, বৃহস্পতিবার, ৫ বৈশাখ ১৪৩১ বঙ্গাব্দ, ৮ শাওয়াল ১৪৪৫ হিঃ
+                    </p>
+                    
+                </div>
+            {{-- </div> --}}
+            {{-- <div class="col-lg-8 text-center text-lg-right">
                 <a href="https://htmlcodex.com"><img class="img-fluid" src="img/ads-728x90.png" alt=""></a>
-            </div>
+            </div> --}}
         </div>
     </div>
     <!-- Topbar End -->
@@ -116,7 +123,7 @@
     <!-- Navbar Start -->
     <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-2 py-lg-0 px-lg-5">
-            <a href="/" class="navbar-brand d-block d-lg-none">
+            <a href="/" class="navbar-brand text-center d-block d-lg-none">
                 <img width="200" height="80" src="{{asset('/img/logo.png')}}" alt="">
                 {{-- <h1 class="m-0 display-4 text-uppercase text-primary">Kawsar<span class="text-white font-weight-normal">News</span></h1> --}}
             </a>
