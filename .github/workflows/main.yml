@@ -12,5 +12,5 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
         server: ftp.rifatewu2.xyz
-        username: rifatewu@news.rifatewu2.xyz
+        username: frontend@frontend.rifatewu2.xyz
         password: F@e5DEwxrwSJ
