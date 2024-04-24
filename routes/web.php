@@ -8,6 +8,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\ExtraController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PageController;
 
 Route::get('/get',function (){
     return Categories::all();
@@ -43,3 +44,7 @@ Route::get('/profile',[UserController::class,'profile'])->name('auth.profile');
 
 Route::get('/lang/english',[ExtraController::class,'English'])->name('lang.english');
 Route::get('/lang/bangla',[ExtraController::class,'Bangla'])->name('lang.bangla');
+
+Route::get('/pages/{slug}', 'PageController@show')->name('pages.show');
+
+

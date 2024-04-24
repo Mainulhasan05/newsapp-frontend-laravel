@@ -3,7 +3,7 @@
 @section('ogImage',
     asset('https://www.admin.rifatewu2.xyz/images/images/csHMYQFLwgqKVRnGVG9FhCdD08LIAHBtgGG1WMcF.webp'))
 
-@section('title', 'Kawsar News Portal')
+@section('title', 'সংবাদ যোগ: সর্বশেষ খবর, নতুন সংবাদ, এবং বিস্তারিত প্রতিবেদন')
 
 @section('content')
 

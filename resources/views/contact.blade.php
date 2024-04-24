@@ -13,27 +13,37 @@
                 <div class="bg-white border border-top-0 p-4 mb-3">
                     <div class="mb-4">
                         <h6 class="text-uppercase font-weight-bold">Contact Info</h6>
-                        <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
+                        <p class="mb-4">
+                            সংবাদ কিংবা সংবাদের পিছনের খবর আমাদের জানাতে যোগাযোগ করুন আমাদের ঠিকানায়।
+                            আপনার প্রতিষ্ঠানের বিজ্ঞাপন দিতে আমাদের সাথে যোগাযোগ করুন।
+                        </p>
                         <div class="mb-3">
                             <div class="d-flex align-items-center mb-2">
                                 <i class="fa fa-map-marker-alt text-primary mr-2"></i>
                                 <h6 class="font-weight-bold mb-0">Our Office</h6>
                             </div>
-                            <p class="m-0">123 Street, New York, USA</p>
+                            <p class="m-0">
+                                প্রধান কার্যালয়: <br>
+                                বাড়ি নম্বর- ১৬৩, ৫ম তলা, রোড নম্বর - ৩, সি ব্লক, ইস্টার্ন হাউজিং, মিরপুর, ঢাকা। 
+                                <br> <br>
+                                বার্তা ও বাণিজ্যিক কার্যালয়: <br>
+                                হাজী জমির উদ্দিন খাঁন সুপার মার্কেট, ঘিওর উপজেলা সদর, ঘিওর, মানিকগঞ্জ।
+                            </p>
                         </div>
                         <div class="mb-3">
                             <div class="d-flex align-items-center mb-2">
                                 <i class="fa fa-envelope-open text-primary mr-2"></i>
                                 <h6 class="font-weight-bold mb-0">Email Us</h6>
                             </div>
-                            <p class="m-0">info@example.com</p>
+                            <p class="m-0">songbadzog@gmail.com</p>
                         </div>
                         <div class="mb-3">
                             <div class="d-flex align-items-center mb-2">
                                 <i class="fa fa-phone-alt text-primary mr-2"></i>
                                 <h6 class="font-weight-bold mb-0">Call Us</h6>
                             </div>
-                            <p class="m-0">+012 345 6789</p>
+                            <p class="m-0">০১৭১১-৫১২২৫০, ০১৭১২-০২৭৩৩৩, 
+                                ০১৭০৯-৭৮৭৭২২</p>
                         </div>
                     </div>
                     <h6 class="text-uppercase font-weight-bold mb-3">Contact Us</h6>
