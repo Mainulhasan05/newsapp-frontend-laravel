@@ -14,9 +14,9 @@ class PageController extends Controller
 
         // You can then pass this $page to a view
         // For example:
-        // return view('pages.show', compact('page'));
+        return view('pages', compact('page'));
 
         // Or you can directly return a JSON response
-        return response()->json($page);
+        // return response()->json($page);
     }
 }

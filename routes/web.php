@@ -45,6 +45,6 @@ Route::get('/profile',[UserController::class,'profile'])->name('auth.profile');
 Route::get('/lang/english',[ExtraController::class,'English'])->name('lang.english');
 Route::get('/lang/bangla',[ExtraController::class,'Bangla'])->name('lang.bangla');
 
-Route::get('/pages/{slug}', 'PageController@show')->name('pages.show');
+Route::get('/pages/{slug}', [PageController::class,'show'])->name('pages.show');
 
 
