@@ -118,7 +118,7 @@
                             <img class="img-fluid h-100" src="{{ env('BACKEND_URL') }}/images/{{ $news->image }}"
                                 style="object-fit: cover;">
                         </a>
-                        <div class="overlay">
+                        <div class="">
                             <div class="mb-2">
                                 <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
                                     href="">Business</a>
