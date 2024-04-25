@@ -56,8 +56,12 @@
                             <img class="img-fluid w-100" src="{{env("BACKEND_URL")}}/images/{{$news->image}}" style="object-fit: cover;">
                             <div class="bg-white border border-top-0 p-4">
                                 <div class="mb-3">
-                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                        href="">Business</a>
+                                    @if($news->category)
+    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+        href="">{{ $news->category->name }}</a>
+@else
+    <span class="badge badge-secondary">No category</span>
+@endif
                                     <a class="text-body" href="">
                                                                           <small>{{ $news->created_at->format('d M, Y') }}</small>
                                         

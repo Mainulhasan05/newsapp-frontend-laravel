@@ -46,5 +46,6 @@ Route::get('/lang/english',[ExtraController::class,'English'])->name('lang.engli
 Route::get('/lang/bangla',[ExtraController::class,'Bangla'])->name('lang.bangla');
 
 Route::get('/pages/{slug}', [PageController::class,'show'])->name('pages.show');
+Route::get('/guest-login',[UserController::class,'guestLogin'])->name('guest.login');
 
 
