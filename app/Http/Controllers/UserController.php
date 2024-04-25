@@ -91,12 +91,5 @@ class UserController extends Controller
         return view('profile');
     }
     // guestLogin
-    public function guestLogin(Request $request){
-        $user= User::find(1);
-        $request->session()->put('user',$user);
-        return response()->json([
-            "status" => 200,
-            "message" => "Guest logged in successfully"
-        ]);
-    }
+    
 }
