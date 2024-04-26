@@ -9,6 +9,8 @@ use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\ExtraController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\GuestController;
 
 Route::get('/get',function (){
     return Categories::all();
@@ -48,4 +50,12 @@ Route::get('/lang/bangla',[ExtraController::class,'Bangla'])->name('lang.bangla'
 Route::get('/pages/{slug}', [PageController::class,'show'])->name('pages.show');
 Route::get('/guest-login',[UserController::class,'guestLogin'])->name('guest.login');
 
+Route::post('/post/store', [PostController::class, 'store'])->name('post.store');
+
+
+// guest part
+Route::get('/guest/form', [GuestController::class, 'createForm'])->name('guest.form');
+
+// Route to handle form submission
+Route::post('/guest/store', [GuestController::class, 'store'])->name('guest.store');
 

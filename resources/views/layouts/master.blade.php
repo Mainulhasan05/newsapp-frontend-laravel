@@ -208,6 +208,8 @@
                 <p><a href="{{ url('/pages/sompadoker-kotha') }}">সম্পাদকের কথা</a></p>
                 <p><a href="{{ url('/pages/contact') }}">যোগাযোগ</a></p>
                 <p><a href="{{ url('/login') }}">রিপোর্টার লগইন</a></p>
+                <p><a href="{{ route('guest.form') }}">আমাদের লিখুন</a></p>
+
                 
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
