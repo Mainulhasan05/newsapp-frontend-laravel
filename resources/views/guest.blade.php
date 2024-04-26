@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="guest_image">ছবি</label>
+                        <label for="guest_image">আপনার ছবি</label>
                         <input type="file" name="guest_image" id="guest_image" class="form-control-file">
                     </div>
 
@@ -63,7 +63,7 @@
 
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="image">ছবি</label>
+                            <label for="image">খবরের ছবি</label>
                             <input type="file" name="image" id="image" class="form-control-file">
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                         <div class="card-body">
                             <h5 class="card-title">বর্ণনা</h5>
                             <!-- TinyMCE Editor -->
-                            <textarea name="description_bn" class="tinymce-editor"></textarea><!-- End TinyMCE Editor -->
+                            <textarea id="news_description" name="description_bn" class="tinymce-editor"></textarea><!-- End TinyMCE Editor -->
                         </div>
                     </div>
 
@@ -82,6 +82,7 @@
             </div>
         </div>
     </div>
+    <script src="js/tinymce/tinymce.min.js"></script>
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
         tinymce.init({
