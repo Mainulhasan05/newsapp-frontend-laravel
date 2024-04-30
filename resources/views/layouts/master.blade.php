@@ -206,6 +206,7 @@
                 {{-- show some dynamic url, like sompadoker kotha --}}
                 <h5 class="mb-4 text-white text-uppercase font-weight-bold">আর্কাইভ</h5>
                 <p><a href="{{ url('/pages/sompadoker-kotha') }}">সম্পাদকের কথা</a></p>
+                <p><a href="{{ url('/pages/nirbahi-sompadoker-kotha') }}">নির্বাহী সম্পাদকের কথা</a></p>
                 <p><a href="{{ url('/pages/contact') }}">যোগাযোগ</a></p>
                 <p><a href="{{ url('/login') }}">রিপোর্টার লগইন</a></p>
                 <p><a href="{{ route('guest.form') }}">আমাদের লিখুন</a></p>

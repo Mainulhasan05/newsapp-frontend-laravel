@@ -8,12 +8,15 @@
 @endsection
 
 @section('content')
-    <h1>{{ $page->title }}</h1>
+    <div class="container my-4">
+        <h1>{{ $page->title }}</h1>
     <br>
-    {{-- show image --}}
+    
     @if($page->image)
         <img src="{{ asset('storage/pages/'.$page->image) }}" alt="{{ $page->title }}" class="img-fluid">
     @endif
 {!! $page->description !!}
+
+    </div>
 
 @endsection

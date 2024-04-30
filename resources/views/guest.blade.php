@@ -15,7 +15,7 @@
                     </div>
                 @endif
 
-                <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('guest.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <h2>অতিথি তথ্য</h2>
@@ -73,7 +73,7 @@
                         <div class="card-body">
                             <h5 class="card-title">বর্ণনা</h5>
                             <!-- TinyMCE Editor -->
-                            <textarea id="news_description" name="description_bn" class="tinymce-editor"></textarea><!-- End TinyMCE Editor -->
+                            <textarea id="description_bn" name="description_bn" class="tinymce-editor"></textarea><!-- End TinyMCE Editor -->
                         </div>
                     </div>
 
@@ -82,12 +82,13 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.tiny.cloud/1/2mhhga1agevzbqrjvzvqt8wbk4z0yowxqy6sgoaqssk9xezc/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
     <script src="js/tinymce/tinymce.min.js"></script>
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    
     <script>
         tinymce.init({
-            selector: 'textarea#news_description', // Update the selector to match the ID of your description textarea
-            plugins: 'powerpaste advcode table lists checklist',
+            selector: 'textarea#description_bn', 
+            plugins: 'table lists ',
             toolbar: 'undo redo | blocks| bold italic | bullist numlist checklist | code | table'
         });
     </script>
