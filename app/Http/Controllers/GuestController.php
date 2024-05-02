@@ -9,6 +9,8 @@ use App\Models\District;
 use App\Models\Subdistrict;
 use App\Models\Categories;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Http;
+
 
 class GuestController extends Controller
 {
@@ -30,12 +32,28 @@ class GuestController extends Controller
         $guest->phone = $request->input('phone');
         $guest->nid = $request->input('nid');
         
-        if($request->hasFile('guest_image')){
-            $image = $request->file('guest_image');
-            $name = time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/guest_images');
-            $image->move($destinationPath, $name);
-            $guest->image=$name;
+        // if($request->hasFile('guest_image')){
+        //     $image = $request->file('guest_image');
+        //     $name = time().'.'.$image->getClientOriginalExtension();
+        //     $destinationPath = public_path('/guest_images');
+        //     $image->move($destinationPath, $name);
+        //     $guest->image=$name;
+        // }
+        if ($request->hasFile('guest_image')) {
+            // Upload guest image using API
+            $response = Http::attach(
+                'image',
+                $request->file('guest_image'),
+                $request->file('guest_image')->getClientOriginalName() // Specify file name
+            )->post('http://your-api-domain.com/upload-image');
+
+            // Check if the request was successful and get the image path
+            if ($response->successful()) {
+                $guest->image = $response->json('file_path');
+            } else {
+                // Handle error if API request fails
+                return redirect()->back()->with('error', 'Failed to upload guest image.');
+            }
         }
         $guest->save();
 
@@ -65,13 +83,27 @@ class GuestController extends Controller
             $post->sub_district()->associate(Subdistrict::find($subdistrictId));
         }
 
-        if($request->hasFile('image')){
-            $image = $request->file('image');
-            $name = time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/images');
-            $image->move($destinationPath, $name);
-            $post->image=$name;
+        if ($request->hasFile('image')) {
+            $response = Http::attach(
+                'image',
+                $request->file('image'),
+                $request->file('image')->getClientOriginalName() // Specify file name
+            )->post('http://your-api-domain.com/upload-image');
+
+            if ($response->successful()) {
+                $post->image = $response->json('file_path');
+            } else {
+                return redirect()->back()->with('error', 'Failed to upload post image.');
+            }
         }
+
+        // if($request->hasFile('image')){
+        //     $image = $request->file('image');
+        //     $name = time().'.'.$image->getClientOriginalExtension();
+        //     $destinationPath = public_path('/images');
+        //     $image->move($destinationPath, $name);
+        //     $post->image=$name;
+        // }
 
         $post->save();
 
