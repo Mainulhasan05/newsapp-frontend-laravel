@@ -9,18 +9,26 @@ use App\Models\Posts;
 class HomeController extends Controller
 {
     public function index()
-    {
-        $featured_news=Posts::where('headline',1)->orderBy('id','desc')->take(5)->get();
-        
-        $latest_news=Posts::orderBy('id','desc')->take(5)->get();
-        
-        $parentCategoriesWithNews = Categories::whereNull('parent_id')
-            ->with(['posts' => function ($query) {
-                $query->orderBy('id', 'desc')->take(20);
-            }])
-            ->get();
+{
+    $featured_news = Posts::where('headline', 1)
+                         ->where('is_published', 1)
+                         ->orderBy('id', 'desc')
+                         ->take(5)
+                         ->get();
 
-        return view('home', compact('featured_news', 'latest_news', 'parentCategoriesWithNews'));
-        // return response()->json(['parentCategoriesWithNews' => $parentCategoriesWithNews]);
-    }
+    $latest_news = Posts::where('is_published', 1)
+                       ->orderBy('id', 'desc')
+                       ->take(5)
+                       ->get();
+
+    $parentCategoriesWithNews = Categories::whereNull('parent_id')
+        ->with(['posts' => function ($query) {
+            $query->where('is_published', 1)
+                  ->orderBy('id', 'desc')
+                  ->take(20);
+        }])
+        ->get();
+
+    return view('home', compact('featured_news', 'latest_news', 'parentCategoriesWithNews'));
+}
 }
