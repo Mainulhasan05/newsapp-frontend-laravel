@@ -45,7 +45,7 @@ class GuestController extends Controller
                 'image',
                 $request->file('guest_image'),
                 $request->file('guest_image')->getClientOriginalName() // Specify file name
-            )->post('http://your-api-domain.com/upload-image');
+            )->post('https://www.admin.rifatewu2.xyz/upload-image');
 
             // Check if the request was successful and get the image path
             if ($response->successful()) {
@@ -83,35 +83,45 @@ class GuestController extends Controller
             $post->sub_district()->associate(Subdistrict::find($subdistrictId));
         }
 
-        if ($request->hasFile('image')) {
-            $response = Http::attach(
-                'image',
-                $request->file('image'),
-                $request->file('image')->getClientOriginalName() // Specify file name
-            )->post('http://your-api-domain.com/upload-image');
+    //     if ($request->hasFile('image')) {
+    //     $response = Http::attach(
+    //         'image', 
+    //         file_get_contents($request->file('image')->getRealPath()), 
+    //         $request->file('image')->getClientOriginalName()
+    //     )->post('https://www.admin.rifatewu2.xyz/upload-image');
 
-            if ($response->successful()) {
-                $post->image = $response->json('file_path');
-            } else {
-                return redirect()->back()->with('error', 'Failed to upload post image.');
-            }
+    //     if ($response->successful()) {
+    //         $filePath = $response->json('file_path');
+    //         return response()->json(['file_path' => $filePath], 200);
+    //     } else {
+    //         return response()->json(['error' => 'Failed to upload image.'], $response->status());
+    //     }
+    // }
+    
+    if ($request->hasFile('image')) {
+        // Upload post image using API
+        $response = Http::attach(
+            'image', 
+            file_get_contents($request->file('image')->getRealPath()), 
+            $request->file('image')->getClientOriginalName()
+        )->post('https://www.admin.rifatewu2.xyz/upload-image');
+
+        // Check if the request was successful and get the image path
+        if ($response->successful()) {
+            $post->image = $response->json('file_path');
+        } else {
+            // Handle error if API request fails
+            return redirect()->back()->with('error', 'Failed to upload post image.');
         }
+    }
 
-        // if($request->hasFile('image')){
-        //     $image = $request->file('image');
-        //     $name = time().'.'.$image->getClientOriginalExtension();
-        //     $destinationPath = public_path('/images');
-        //     $image->move($destinationPath, $name);
-        //     $post->image=$name;
-        // }
 
         $post->save();
 
-        // Attach guest information to the post
-        $post->guest_id = $guest->id; // Setting guest_id
+        
+        $post->guest_id = $guest->id;
         $post->save();
 
-        // Redirect back or to any other route after creating the guest and post
         return redirect()->back()->with('success', 'পোস্ট এবং অতিথি সফলভাবে তৈরি হয়েছে।');
     }
 }
