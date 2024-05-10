@@ -30,6 +30,33 @@
             <div class="row align-items-center">
                 <div class="col-12">
                     <div class="d-flex justify-content-between">
+                        {{-- shareButtons --}}
+                        @foreach($shareButtons as $platform => $url)
+    @php
+        $iconClass = '';
+        switch($platform) {
+            case 'facebook':
+                $iconClass = 'fab fa-facebook-f';
+                break;
+            case 'twitter':
+                $iconClass = 'fab fa-twitter';
+                break;
+            case 'linkedin':
+                $iconClass = 'fab fa-linkedin-in';
+                break;
+            case 'whatsapp':
+                $iconClass = 'fab fa-whatsapp';
+                break;
+            default:
+                $iconClass = 'fab fa-instagram'; // Default icon
+        }
+    @endphp
+    <a href="{{ $url }}" class="text-white text-decoration-none mr-3" target="_blank">
+        <i class="{{ $iconClass }}"></i>
+    </a>
+@endforeach
+
+           
                         <div class="section-title border-right-0 mb-0" style="width: 180px;">
                             <h4 class="m-0 text-uppercase font-weight-bold">Tranding</h4>
                         </div>
