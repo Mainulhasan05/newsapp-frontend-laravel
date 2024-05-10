@@ -25,7 +25,7 @@ class GuestController extends Controller
 
     public function store(Request $request)
     {
-        
+        $url = env('BACKEND_URL') . '/upload-image';
         $guest = new Guest();
         $guest->name = $request->input('name');
         $guest->email = $request->input('email');
@@ -45,7 +45,7 @@ class GuestController extends Controller
                 'image',
                 $request->file('guest_image'),
                 $request->file('guest_image')->getClientOriginalName() // Specify file name
-            )->post('https://www.admin.rifatewu2.xyz/upload-image');
+            )->post($url);
 
             // Check if the request was successful and get the image path
             if ($response->successful()) {
@@ -99,12 +99,11 @@ class GuestController extends Controller
     // }
     
     if ($request->hasFile('image')) {
-        // Upload post image using API
         $response = Http::attach(
             'image', 
             file_get_contents($request->file('image')->getRealPath()), 
             $request->file('image')->getClientOriginalName()
-        )->post('https://www.admin.rifatewu2.xyz/upload-image');
+        )->post($url);
 
         // Check if the request was successful and get the image path
         if ($response->successful()) {
