@@ -1,8 +1,8 @@
 {{-- extend master layout --}}
 @extends('layouts.master')
-@section('title', $news->title)
+@section('title', $news->title_bn)
 
-@section('ogTitle', $news->title)
+@section('ogTitle', $news->title_bn)
 @section('ogDescription', $news->description)
 <meta property="og:title" content="{{ $news->title }}">
 <meta property="og:description" content="{{ $news->description }}">
@@ -11,7 +11,7 @@
 @section('ogUrl', route('news.show', $news->slug))
 @section('ogImage', '{{env("BACKEND_URL")}}/images/{{$news->image}}') --}}
 
-@section('twitterTitle', $news->title)
+@section('twitterTitle', $news->title_bn)
 @section('twitterDescription', $news->excerpt)
 @section('twitterUrl', route('news.show', $news->slug))
 @section('twitterImage', "{{ env('BACKEND_URL') }}/images/{{ $news->image }}")
@@ -30,33 +30,8 @@
             <div class="row align-items-center">
                 <div class="col-12">
                     <div class="d-flex justify-content-between">
-                        {{-- shareButtons --}}
-                        @foreach($shareButtons as $platform => $url)
-    @php
-        $iconClass = '';
-        switch($platform) {
-            case 'facebook':
-                $iconClass = 'fab fa-facebook-f';
-                break;
-            case 'twitter':
-                $iconClass = 'fab fa-twitter';
-                break;
-            case 'linkedin':
-                $iconClass = 'fab fa-linkedin-in';
-                break;
-            case 'whatsapp':
-                $iconClass = 'fab fa-whatsapp';
-                break;
-            default:
-                $iconClass = 'fab fa-instagram'; // Default icon
-        }
-    @endphp
-    <a href="{{ $url }}" class="text-white text-decoration-none mr-3" target="_blank">
-        <i class="{{ $iconClass }}"></i>
-    </a>
-@endforeach
 
-           
+                        
                         <div class="section-title border-right-0 mb-0" style="width: 180px;">
                             <h4 class="m-0 text-uppercase font-weight-bold">Tranding</h4>
                         </div>
@@ -110,9 +85,41 @@
                                     {!! $news->description_en !!}
                                 @endif
 
-
-
                             </p>
+                            <div class="d-flex mx-3 bg-dark p-4">
+                                <span class="text-white">
+                                    Share on:
+                                </span>
+                                <div class=" mx-4 d-flex gap-3">
+                                    @foreach ($shareButtons as $platform => $url)
+                                @php
+                                    $iconClass = '';
+                                    switch ($platform) {
+                                        case 'facebook':
+                                            $iconClass = 'fab fa-facebook-f';
+                                            break;
+                                        case 'twitter':
+                                            $iconClass = 'fab fa-twitter';
+                                            break;
+                                        case 'linkedin':
+                                            $iconClass = 'fab fa-linkedin-in';
+                                            break;
+                                        case 'whatsapp':
+                                            $iconClass = 'fab fa-whatsapp';
+                                            break;
+                                        default:
+                                            $iconClass = 'fab fa-instagram'; // Default icon
+                                    }
+                                @endphp
+                                <a href="{{ $url }}" class="text-white text-decoration-none mr-3" target="_blank">
+                                    <i class="{{ $iconClass }}"></i>
+                                </a>
+                            @endforeach
+                                </div>
+                                 
+    
+    
+                            </div>
 
                         </div>
                         <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
@@ -173,7 +180,8 @@
                                             style="width: 45px;">
                                         <div class="media-body">
                                             <h6><a class="text-secondary font-weight-bold" href="">John Doe</a>
-                                                <small><i>01 Jan 2045</i></small></h6>
+                                                <small><i>01 Jan 2045</i></small>
+                                            </h6>
                                             <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor
                                                 labore accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed sed
                                                 eirmod ipsum.</p>

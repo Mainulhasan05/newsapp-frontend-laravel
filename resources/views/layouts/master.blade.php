@@ -207,6 +207,10 @@
                 <h5 class="mb-4 text-white text-uppercase font-weight-bold">আর্কাইভ</h5>
                 <p><a href="{{ url('/pages/sompadoker-kotha') }}">সম্পাদকের কথা</a></p>
                 <p><a href="{{ url('/pages/nirbahi-sompadoker-kotha') }}">নির্বাহী সম্পাদকের কথা</a></p>
+                <p><a href="{{ url('/pages/surculation') }}">সার্কুলেশন</a></p>
+                <p><a href="{{ url('/pages/goponiotar-niti') }}">গোপনীয়তার নীতি</a></p>
+                <p><a href="{{ url('/pages/amader-somporke') }}">সংবাদ যোগ সম্পর্কে</a></p>
+                
                 <p><a href="{{ url('/pages/contact') }}">যোগাযোগ</a></p>
                 <p><a href="{{ url('/login') }}">রিপোর্টার লগইন</a></p>
                 <p><a href="{{ route('guest.form') }}">আমাদের লিখুন</a></p>
@@ -266,7 +270,7 @@
         </div>
     </div>
     <div class="container-fluid py-4 px-sm-3 px-md-5" style="background: #111111;">
-        <p class="m-0 text-center">&copy; <a href="#">Kawsar News</a>. All Rights Reserved.
+        <p class="m-0 text-center">&copy; <a href="#">© সংবাদ যোগ কর্তৃক সর্বস্বত্ব সংরক্ষিত</a></p>
 
 
 

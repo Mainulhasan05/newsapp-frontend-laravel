@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('ogImage', asset('https://www.admin.rifatewu2.xyz/images/images/csHMYQFLwgqKVRnGVG9FhCdD08LIAHBtgGG1WMcF.webp'))
+@section('ogImage', asset('/img/logo.png'))
 
 @section('title', 'সংবাদ যোগ: সর্বশেষ খবর, নতুন সংবাদ, এবং বিস্তারিত প্রতিবেদন')
 
