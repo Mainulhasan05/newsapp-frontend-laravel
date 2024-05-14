@@ -13,14 +13,14 @@
     <meta property="og:title" content="@yield('ogTitle', 'Your News Portal')">
     <meta property="og:description" content="@yield('ogDescription', 'Latest news and updates')">
     <meta property="og:url" content="@yield('ogUrl', request()->fullUrl())">
-    <meta property="og:image" content="@yield('ogImage', asset('path/to/default/image.jpg'))">
+    <meta property="og:image" content="@yield('ogImage', asset('/img/logo.png'))">
     <meta property="og:type" content="article">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:title" content="@yield('twitterTitle', 'Your News Portal')">
     <meta name="twitter:description" content="@yield('twitterDescription', 'Latest news and updates')">
     <meta name="twitter:url" content="@yield('twitterUrl', request()->fullUrl())">
-    <meta name="twitter:image" content="@yield('twitterImage', asset('path/to/default/image.jpg'))">
+    <meta name="twitter:image" content="@yield('twitterImage', asset('/img/logo.png'))">
     <meta name="twitter:card" content="summary_large_image">
 
     <!-- SEO Meta Tags -->
@@ -230,9 +230,9 @@
             <div class="col-lg-3 col-md-6 mb-5" style="color:white">
                 প্রধান উপদেষ্টা: সাজ্জাদ আলম খান তপু <br>
                 উপদেষ্টা সম্পাদক: মোঃ আনোয়ারুল হক <br>
-                প্রকাশক ও প্রধান সম্পাদক: মোহাম্মদ আজিজুল মজিদ কাজল <br>
+                সম্পাদক ও প্রকাশক: মোহাম্মদ আজিজুল মজিদ কাজল  <br>
                 ভারপ্রাপ্ত সম্পাদক: ইকবাল হাসান কাজল <br>
-                নির্বাহী সম্পাদকঃ কে.এম কাউছার কারাইজ <br>
+                <a href="https://www.facebook.com/profile.php?id=100007687398229" target="_blank" rel="noopener noreferrer">নির্বাহী সম্পাদক: কে.এম কাউছার কারাইজ </a> <br>
                 ব্যবস্হাপনা সম্পাদক: মৃণালকান্তি দাস <br>
                 বার্তা সম্পাদক: বশির আহমেদ ফারুক <br>
                 সহ বার্তা সম্পাদক: মহসীন খান হীরা <br>

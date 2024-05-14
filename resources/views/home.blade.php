@@ -1,8 +1,9 @@
 @extends('layouts.master')
-
 @section('ogImage', asset('/img/logo.png'))
+@section('ogTitle', 'সংবাদ যোগ: সর্বশেষ খবর, নতুন সংবাদ, এবং বিস্তারিত প্রতিবেদন')
+@section('ogDescription', 'Stay updated with the latest news, breaking stories, and detailed reports. Your go-to source for news from Bangladesh.')
 
-@section('title', 'সংবাদ যোগ: সর্বশেষ খবর, নতুন সংবাদ, এবং বিস্তারিত প্রতিবেদন')
+
 
 @section('content')
 
