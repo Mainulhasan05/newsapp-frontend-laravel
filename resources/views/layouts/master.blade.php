@@ -229,10 +229,10 @@
             </div>
             <div class="col-lg-3 col-md-6 mb-5" style="color:white">
                 প্রধান উপদেষ্টা: সাজ্জাদ আলম খান তপু <br>
-                উপদেষ্টা সম্পাদক: মোঃ আনোয়ারুল হক <br>
+                উপদেষ্টা: মোঃ আনোয়ারুল হক <br>
                 সম্পাদক ও প্রকাশক: মোহাম্মদ আজিজুল মজিদ কাজল  <br>
                 ভারপ্রাপ্ত সম্পাদক: ইকবাল হাসান কাজল <br>
-                <a href="https://www.facebook.com/profile.php?id=100007687398229" target="_blank" rel="noopener noreferrer">নির্বাহী সম্পাদক: কে.এম কাউছার কারাইজ </a> <br>
+                <a class="text-white" href="https://www.facebook.com/profile.php?id=100007687398229" target="_blank" rel="noopener noreferrer"><span class="text-white">নির্বাহী সম্পাদক: কে.এম কাউছার কারাইজ</span> </a> <br>
                 ব্যবস্হাপনা সম্পাদক: মৃণালকান্তি দাস <br>
                 বার্তা সম্পাদক: বশির আহমেদ ফারুক <br>
                 সহ বার্তা সম্পাদক: মহসীন খান হীরা <br>

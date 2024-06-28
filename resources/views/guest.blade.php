@@ -5,6 +5,8 @@
 @endsection
 
 @section('content')
+<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/42.0.0/ckeditor5.css" />
+
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -67,13 +69,19 @@
                             <input type="file" name="image" id="image" class="form-control-file">
                         </div>
                     </div>
-
+                    
+                    
                     {{-- TinyMCE code --}}
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">বর্ণনা</h5>
                             <!-- TinyMCE Editor -->
-                            <textarea id="description_bn" name="description_bn" class="tinymce-editor"></textarea><!-- End TinyMCE Editor -->
+                            {{-- <textarea id="editor" name="description_bn" class="tinymce-editor"></textarea><!-- End TinyMCE Editor --> --}}
+                            {{-- <div name="description_bn" id="editor"> --}}
+                                <textarea name="description_bn" class="w-100"></textarea>
+                                
+                            </div>
+                            {{-- <input type="hidden" name="description_bn" id="description_bn"> --}}
                         </div>
                     </div>
 
@@ -83,13 +91,63 @@
         </div>
     </div>
     <script src="https://cdn.tiny.cloud/1/2mhhga1agevzbqrjvzvqt8wbk4z0yowxqy6sgoaqssk9xezc/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
-    <script src="js/tinymce/tinymce.min.js"></script>
-    
+    {{-- <script src="js/tinymce/tinymce.min.js"></script> --}}
+    <script type="importmap">
+    {
+        "imports": {
+            "ckeditor5": "https://cdn.ckeditor.com/ckeditor5/42.0.0/ckeditor5.js",
+            "ckeditor5/": "https://cdn.ckeditor.com/ckeditor5/42.0.0/"
+        }
+    }
+</script>
+<script type="importmap">
+    {
+        "imports": {
+            "ckeditor5": "https://cdn.ckeditor.com/ckeditor5/42.0.0/ckeditor5.js",
+            "ckeditor5/": "https://cdn.ckeditor.com/ckeditor5/42.0.0/"
+        }
+    }
+</script>
+<script type="module">
+    import {
+        ClassicEditor,
+        Essentials,
+        Bold,
+        Italic,
+        Font,
+        Paragraph
+    } from 'ckeditor5';
+
+    ClassicEditor
+        .create( document.querySelector( '#editor' ), {
+            plugins: [ Essentials, Bold, Italic, Font, Paragraph ],
+            toolbar: {
+                items: [
+                    'undo', 'redo', '|', 'bold', 'italic', '|',
+                    'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor'
+                ]
+            }
+        } )
+        .then( editor => {
+            console.log( 'Editor was initialized', editor );
+                // Ensure the hidden input field is updated with the CKEditor data before form submission
+                document.getElementById('guest-form').addEventListener('submit', function(event) {
+                    console.log('Form submission event triggered');
+                    document.getElementById('description_bn').value = editor.getData();
+                });
+            } )
+            .catch( error => {
+                console.error(error);
+            } );
+</script>
+
+
     <script>
-        tinymce.init({
-            selector: 'textarea#description_bn', 
-            plugins: 'table lists ',
-            toolbar: 'undo redo | blocks| bold italic | bullist numlist checklist | code | table'
-        });
+        
+        // tinymce.init({
+        //     selector: 'textarea#description_bn', 
+        //     plugins: 'table lists ',
+        //     toolbar: 'undo redo | blocks| bold italic | bullist numlist checklist | code | table'
+        // });
     </script>
 @endsection

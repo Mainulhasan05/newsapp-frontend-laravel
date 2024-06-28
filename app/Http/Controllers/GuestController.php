@@ -19,19 +19,20 @@ class GuestController extends Controller
     {
         $categories = Categories::select('id', 'name')->whereNull('parent_id')->get();
         $districts = District::select('id', 'district_bn')->get();
-        
+
         return view('guest', compact('categories', 'districts'));
     }
 
     public function store(Request $request)
     {
+        // dd($request->all());
         $url = env('BACKEND_URL') . '/upload-image';
         $guest = new Guest();
         $guest->name = $request->input('name');
         $guest->email = $request->input('email');
         $guest->phone = $request->input('phone');
         $guest->nid = $request->input('nid');
-        
+
         // if($request->hasFile('guest_image')){
         //     $image = $request->file('guest_image');
         //     $name = time().'.'.$image->getClientOriginalExtension();
@@ -59,7 +60,7 @@ class GuestController extends Controller
 
         $post = new Posts();
         $post->title_bn = $request->input('title_bn');
-        $post->slug=  Str::slug($request->input('title_bn'));
+        $post->slug =  Str::slug($request->input('title_bn'));
         $post->title_en = $request->input('title_en');
         $post->category_id = $request->input('category_id');
         $post->sub_category_id = $request->input('sub_category_id');
@@ -67,9 +68,9 @@ class GuestController extends Controller
         $post->tags_en = $request->input('tags_en');
         $post->description_bn = $request->input('description_bn');
         $post->description_en = $request->input('description_en');
-        
-        $post->is_published = false; 
-        $post->is_guest = true; 
+
+        $post->is_published = false;
+        $post->is_guest = true;
 
         // Associate district and subdistrict with the post
         $districtId = $request->input('district_id');
@@ -83,41 +84,41 @@ class GuestController extends Controller
             $post->sub_district()->associate(Subdistrict::find($subdistrictId));
         }
 
-    //     if ($request->hasFile('image')) {
-    //     $response = Http::attach(
-    //         'image', 
-    //         file_get_contents($request->file('image')->getRealPath()), 
-    //         $request->file('image')->getClientOriginalName()
-    //     )->post('https://www.admin.rifatewu2.xyz/upload-image');
+        //     if ($request->hasFile('image')) {
+        //     $response = Http::attach(
+        //         'image', 
+        //         file_get_contents($request->file('image')->getRealPath()), 
+        //         $request->file('image')->getClientOriginalName()
+        //     )->post('https://www.admin.rifatewu2.xyz/upload-image');
 
-    //     if ($response->successful()) {
-    //         $filePath = $response->json('file_path');
-    //         return response()->json(['file_path' => $filePath], 200);
-    //     } else {
-    //         return response()->json(['error' => 'Failed to upload image.'], $response->status());
-    //     }
-    // }
-    
-    if ($request->hasFile('image')) {
-        $response = Http::attach(
-            'image', 
-            file_get_contents($request->file('image')->getRealPath()), 
-            $request->file('image')->getClientOriginalName()
-        )->post($url);
+        //     if ($response->successful()) {
+        //         $filePath = $response->json('file_path');
+        //         return response()->json(['file_path' => $filePath], 200);
+        //     } else {
+        //         return response()->json(['error' => 'Failed to upload image.'], $response->status());
+        //     }
+        // }
 
-        // Check if the request was successful and get the image path
-        if ($response->successful()) {
-            $post->image = $response->json('file_path');
-        } else {
-            // Handle error if API request fails
-            return redirect()->back()->with('error', 'Failed to upload post image.');
+        if ($request->hasFile('image')) {
+            $response = Http::attach(
+                'image',
+                file_get_contents($request->file('image')->getRealPath()),
+                $request->file('image')->getClientOriginalName()
+            )->post($url);
+
+            // Check if the request was successful and get the image path
+            if ($response->successful()) {
+                $post->image = $response->json('file_path');
+            } else {
+                // Handle error if API request fails
+                return redirect()->back()->with('error', 'Failed to upload post image.');
+            }
         }
-    }
 
 
         $post->save();
 
-        
+
         $post->guest_id = $guest->id;
         $post->save();
 
